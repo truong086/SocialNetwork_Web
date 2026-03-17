@@ -33,11 +33,17 @@ namespace truyenthongso.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("NVARCHAR2(2000)");
 
-                    b.Property<string>("cretoredit")
+                    b.Property<string>("creator")
                         .HasColumnType("NVARCHAR2(2000)");
+
+                    b.Property<DateTimeOffset?>("cretoredat")
+                        .HasColumnType("TIMESTAMP(7) WITH TIME ZONE");
 
                     b.Property<bool>("deleted")
                         .HasColumnType("NUMBER(1)");
+
+                    b.Property<DateTimeOffset?>("updateat")
+                        .HasColumnType("TIMESTAMP(7) WITH TIME ZONE");
 
                     b.HasKey("id");
 
@@ -67,11 +73,17 @@ namespace truyenthongso.Migrations
                     b.Property<int?>("User_id")
                         .HasColumnType("NUMBER(10)");
 
-                    b.Property<string>("cretoredit")
+                    b.Property<string>("creator")
                         .HasColumnType("NVARCHAR2(2000)");
+
+                    b.Property<DateTimeOffset?>("cretoredat")
+                        .HasColumnType("TIMESTAMP(7) WITH TIME ZONE");
 
                     b.Property<bool>("deleted")
                         .HasColumnType("NUMBER(1)");
+
+                    b.Property<DateTimeOffset?>("updateat")
+                        .HasColumnType("TIMESTAMP(7) WITH TIME ZONE");
 
                     b.HasKey("id");
 
@@ -99,16 +111,35 @@ namespace truyenthongso.Migrations
                     b.Property<int?>("Comment_id")
                         .HasColumnType("NUMBER(10)");
 
+                    b.Property<string>("PublicId")
+                        .HasColumnType("NVARCHAR2(2000)");
+
+                    b.Property<string>("Url")
+                        .HasColumnType("NVARCHAR2(2000)");
+
                     b.Property<int?>("User_id")
                         .HasColumnType("NUMBER(10)");
 
-                    b.Property<string>("cretoredit")
+                    b.Property<string>("creator")
                         .HasColumnType("NVARCHAR2(2000)");
+
+                    b.Property<DateTimeOffset?>("cretoredat")
+                        .HasColumnType("TIMESTAMP(7) WITH TIME ZONE");
 
                     b.Property<bool>("deleted")
                         .HasColumnType("NUMBER(1)");
 
+                    b.Property<string>("descript")
+                        .HasColumnType("NVARCHAR2(2000)");
+
+                    b.Property<DateTimeOffset?>("updateat")
+                        .HasColumnType("TIMESTAMP(7) WITH TIME ZONE");
+
                     b.HasKey("id");
+
+                    b.HasIndex("CommentDescript3_2");
+
+                    b.HasIndex("CommentDescription_id");
 
                     b.HasIndex("Comment_id");
 
@@ -146,17 +177,61 @@ namespace truyenthongso.Migrations
                     b.Property<int?>("User_id")
                         .HasColumnType("NUMBER(10)");
 
-                    b.Property<string>("cretoredit")
+                    b.Property<string>("creator")
                         .HasColumnType("NVARCHAR2(2000)");
+
+                    b.Property<DateTimeOffset?>("cretoredat")
+                        .HasColumnType("TIMESTAMP(7) WITH TIME ZONE");
 
                     b.Property<bool>("deleted")
                         .HasColumnType("NUMBER(1)");
+
+                    b.Property<DateTimeOffset?>("updateat")
+                        .HasColumnType("TIMESTAMP(7) WITH TIME ZONE");
 
                     b.HasKey("id");
 
                     b.HasIndex("User_id");
 
                     b.ToTable("complaints");
+                });
+
+            modelBuilder.Entity("truyenthongso.Models.Friendship", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("NUMBER(10)");
+
+                    OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
+
+                    b.Property<int?>("UserId1")
+                        .HasColumnType("NUMBER(10)");
+
+                    b.Property<int?>("UserId2")
+                        .HasColumnType("NUMBER(10)");
+
+                    b.Property<string>("creator")
+                        .HasColumnType("NVARCHAR2(2000)");
+
+                    b.Property<DateTimeOffset?>("cretoredat")
+                        .HasColumnType("TIMESTAMP(7) WITH TIME ZONE");
+
+                    b.Property<bool>("deleted")
+                        .HasColumnType("NUMBER(1)");
+
+                    b.Property<int>("status")
+                        .HasColumnType("NUMBER(10)");
+
+                    b.Property<DateTimeOffset?>("updateat")
+                        .HasColumnType("TIMESTAMP(7) WITH TIME ZONE");
+
+                    b.HasKey("id");
+
+                    b.HasIndex("UserId1");
+
+                    b.HasIndex("UserId2");
+
+                    b.ToTable("friendships");
                 });
 
             modelBuilder.Entity("truyenthongso.Models.Group", b =>
@@ -170,11 +245,17 @@ namespace truyenthongso.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("NVARCHAR2(2000)");
 
-                    b.Property<string>("cretoredit")
+                    b.Property<string>("creator")
                         .HasColumnType("NVARCHAR2(2000)");
+
+                    b.Property<DateTimeOffset?>("cretoredat")
+                        .HasColumnType("TIMESTAMP(7) WITH TIME ZONE");
 
                     b.Property<bool>("deleted")
                         .HasColumnType("NUMBER(1)");
+
+                    b.Property<DateTimeOffset?>("updateat")
+                        .HasColumnType("TIMESTAMP(7) WITH TIME ZONE");
 
                     b.HasKey("id");
 
@@ -189,8 +270,11 @@ namespace truyenthongso.Migrations
 
                     OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
 
-                    b.Property<string>("cretoredit")
+                    b.Property<string>("creator")
                         .HasColumnType("NVARCHAR2(2000)");
+
+                    b.Property<DateTimeOffset?>("cretoredat")
+                        .HasColumnType("TIMESTAMP(7) WITH TIME ZONE");
 
                     b.Property<bool>("deleted")
                         .HasColumnType("NUMBER(1)");
@@ -200,6 +284,9 @@ namespace truyenthongso.Migrations
 
                     b.Property<int?>("role_id")
                         .HasColumnType("NUMBER(10)");
+
+                    b.Property<DateTimeOffset?>("updateat")
+                        .HasColumnType("TIMESTAMP(7) WITH TIME ZONE");
 
                     b.HasKey("id");
 
@@ -224,11 +311,17 @@ namespace truyenthongso.Migrations
                     b.Property<int?>("User_id")
                         .HasColumnType("NUMBER(10)");
 
-                    b.Property<string>("cretoredit")
+                    b.Property<string>("creator")
                         .HasColumnType("NVARCHAR2(2000)");
+
+                    b.Property<DateTimeOffset?>("cretoredat")
+                        .HasColumnType("TIMESTAMP(7) WITH TIME ZONE");
 
                     b.Property<bool>("deleted")
                         .HasColumnType("NUMBER(1)");
+
+                    b.Property<DateTimeOffset?>("updateat")
+                        .HasColumnType("TIMESTAMP(7) WITH TIME ZONE");
 
                     b.HasKey("id");
 
@@ -251,11 +344,20 @@ namespace truyenthongso.Migrations
                     b.Property<int?>("User_id")
                         .HasColumnType("NUMBER(10)");
 
-                    b.Property<string>("cretoredit")
+                    b.Property<string>("creator")
                         .HasColumnType("NVARCHAR2(2000)");
+
+                    b.Property<DateTimeOffset?>("cretoredat")
+                        .HasColumnType("TIMESTAMP(7) WITH TIME ZONE");
 
                     b.Property<bool>("deleted")
                         .HasColumnType("NUMBER(1)");
+
+                    b.Property<int?>("status")
+                        .HasColumnType("NUMBER(10)");
+
+                    b.Property<DateTimeOffset?>("updateat")
+                        .HasColumnType("TIMESTAMP(7) WITH TIME ZONE");
 
                     b.HasKey("id");
 
@@ -292,11 +394,17 @@ namespace truyenthongso.Migrations
                     b.Property<string>("Url")
                         .HasColumnType("NVARCHAR2(2000)");
 
-                    b.Property<string>("cretoredit")
+                    b.Property<string>("creator")
                         .HasColumnType("NVARCHAR2(2000)");
+
+                    b.Property<DateTimeOffset?>("cretoredat")
+                        .HasColumnType("TIMESTAMP(7) WITH TIME ZONE");
 
                     b.Property<bool>("deleted")
                         .HasColumnType("NUMBER(1)");
+
+                    b.Property<DateTimeOffset?>("updateat")
+                        .HasColumnType("TIMESTAMP(7) WITH TIME ZONE");
 
                     b.HasKey("id");
 
@@ -318,11 +426,17 @@ namespace truyenthongso.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("NVARCHAR2(2000)");
 
-                    b.Property<string>("cretoredit")
+                    b.Property<string>("creator")
                         .HasColumnType("NVARCHAR2(2000)");
+
+                    b.Property<DateTimeOffset?>("cretoredat")
+                        .HasColumnType("TIMESTAMP(7) WITH TIME ZONE");
 
                     b.Property<bool>("deleted")
                         .HasColumnType("NUMBER(1)");
+
+                    b.Property<DateTimeOffset?>("updateat")
+                        .HasColumnType("TIMESTAMP(7) WITH TIME ZONE");
 
                     b.HasKey("id");
 
@@ -349,11 +463,17 @@ namespace truyenthongso.Migrations
                     b.Property<string>("Website")
                         .HasColumnType("NVARCHAR2(2000)");
 
-                    b.Property<string>("cretoredit")
+                    b.Property<string>("creator")
                         .HasColumnType("NVARCHAR2(2000)");
+
+                    b.Property<DateTimeOffset?>("cretoredat")
+                        .HasColumnType("TIMESTAMP(7) WITH TIME ZONE");
 
                     b.Property<bool>("deleted")
                         .HasColumnType("NUMBER(1)");
+
+                    b.Property<DateTimeOffset?>("updateat")
+                        .HasColumnType("TIMESTAMP(7) WITH TIME ZONE");
 
                     b.HasKey("id");
 
@@ -377,11 +497,17 @@ namespace truyenthongso.Migrations
                     b.Property<int?>("Use_id")
                         .HasColumnType("NUMBER(10)");
 
-                    b.Property<string>("cretoredit")
+                    b.Property<string>("creator")
                         .HasColumnType("NVARCHAR2(2000)");
+
+                    b.Property<DateTimeOffset?>("cretoredat")
+                        .HasColumnType("TIMESTAMP(7) WITH TIME ZONE");
 
                     b.Property<bool>("deleted")
                         .HasColumnType("NUMBER(1)");
+
+                    b.Property<DateTimeOffset?>("updateat")
+                        .HasColumnType("TIMESTAMP(7) WITH TIME ZONE");
 
                     b.HasKey("id");
 
@@ -419,11 +545,17 @@ namespace truyenthongso.Migrations
                     b.Property<int?>("Views")
                         .HasColumnType("NUMBER(10)");
 
-                    b.Property<string>("cretoredit")
+                    b.Property<string>("creator")
                         .HasColumnType("NVARCHAR2(2000)");
+
+                    b.Property<DateTimeOffset?>("cretoredat")
+                        .HasColumnType("TIMESTAMP(7) WITH TIME ZONE");
 
                     b.Property<bool>("deleted")
                         .HasColumnType("NUMBER(1)");
+
+                    b.Property<DateTimeOffset?>("updateat")
+                        .HasColumnType("TIMESTAMP(7) WITH TIME ZONE");
 
                     b.HasKey("id");
 
@@ -451,14 +583,20 @@ namespace truyenthongso.Migrations
                     b.Property<string>("Url")
                         .HasColumnType("NVARCHAR2(2000)");
 
-                    b.Property<string>("cretoredit")
+                    b.Property<string>("creator")
                         .HasColumnType("NVARCHAR2(2000)");
+
+                    b.Property<DateTimeOffset?>("cretoredat")
+                        .HasColumnType("TIMESTAMP(7) WITH TIME ZONE");
 
                     b.Property<bool>("deleted")
                         .HasColumnType("NUMBER(1)");
 
                     b.Property<int?>("postid")
                         .HasColumnType("NUMBER(10)");
+
+                    b.Property<DateTimeOffset?>("updateat")
+                        .HasColumnType("TIMESTAMP(7) WITH TIME ZONE");
 
                     b.HasKey("id");
 
@@ -481,11 +619,17 @@ namespace truyenthongso.Migrations
                     b.Property<int?>("User_id")
                         .HasColumnType("NUMBER(10)");
 
-                    b.Property<string>("cretoredit")
+                    b.Property<string>("creator")
                         .HasColumnType("NVARCHAR2(2000)");
+
+                    b.Property<DateTimeOffset?>("cretoredat")
+                        .HasColumnType("TIMESTAMP(7) WITH TIME ZONE");
 
                     b.Property<bool>("deleted")
                         .HasColumnType("NUMBER(1)");
+
+                    b.Property<DateTimeOffset?>("updateat")
+                        .HasColumnType("TIMESTAMP(7) WITH TIME ZONE");
 
                     b.HasKey("id");
 
@@ -508,11 +652,17 @@ namespace truyenthongso.Migrations
                     b.Property<string>("Url")
                         .HasColumnType("NVARCHAR2(2000)");
 
-                    b.Property<string>("cretoredit")
+                    b.Property<string>("creator")
                         .HasColumnType("NVARCHAR2(2000)");
+
+                    b.Property<DateTimeOffset?>("cretoredat")
+                        .HasColumnType("TIMESTAMP(7) WITH TIME ZONE");
 
                     b.Property<bool>("deleted")
                         .HasColumnType("NUMBER(1)");
+
+                    b.Property<DateTimeOffset?>("updateat")
+                        .HasColumnType("TIMESTAMP(7) WITH TIME ZONE");
 
                     b.HasKey("id");
 
@@ -533,11 +683,23 @@ namespace truyenthongso.Migrations
                     b.Property<int?>("User_id")
                         .HasColumnType("NUMBER(10)");
 
-                    b.Property<string>("cretoredit")
+                    b.Property<string>("creator")
                         .HasColumnType("NVARCHAR2(2000)");
+
+                    b.Property<DateTimeOffset?>("cretoredat")
+                        .HasColumnType("TIMESTAMP(7) WITH TIME ZONE");
 
                     b.Property<bool>("deleted")
                         .HasColumnType("NUMBER(1)");
+
+                    b.Property<int?>("status")
+                        .HasColumnType("NUMBER(10)");
+
+                    b.Property<string>("title")
+                        .HasColumnType("NVARCHAR2(2000)");
+
+                    b.Property<DateTimeOffset?>("updateat")
+                        .HasColumnType("TIMESTAMP(7) WITH TIME ZONE");
 
                     b.HasKey("id");
 
@@ -559,11 +721,17 @@ namespace truyenthongso.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("NVARCHAR2(2000)");
 
-                    b.Property<string>("cretoredit")
+                    b.Property<string>("creator")
                         .HasColumnType("NVARCHAR2(2000)");
+
+                    b.Property<DateTimeOffset?>("cretoredat")
+                        .HasColumnType("TIMESTAMP(7) WITH TIME ZONE");
 
                     b.Property<bool>("deleted")
                         .HasColumnType("NUMBER(1)");
+
+                    b.Property<DateTimeOffset?>("updateat")
+                        .HasColumnType("TIMESTAMP(7) WITH TIME ZONE");
 
                     b.HasKey("id");
 
@@ -584,11 +752,17 @@ namespace truyenthongso.Migrations
                     b.Property<int?>("Tag_id")
                         .HasColumnType("NUMBER(10)");
 
-                    b.Property<string>("cretoredit")
+                    b.Property<string>("creator")
                         .HasColumnType("NVARCHAR2(2000)");
+
+                    b.Property<DateTimeOffset?>("cretoredat")
+                        .HasColumnType("TIMESTAMP(7) WITH TIME ZONE");
 
                     b.Property<bool>("deleted")
                         .HasColumnType("NUMBER(1)");
+
+                    b.Property<DateTimeOffset?>("updateat")
+                        .HasColumnType("TIMESTAMP(7) WITH TIME ZONE");
 
                     b.HasKey("id");
 
@@ -599,6 +773,39 @@ namespace truyenthongso.Migrations
                     b.ToTable("tagPosts");
                 });
 
+            modelBuilder.Entity("truyenthongso.Models.Token", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("NUMBER(10)");
+
+                    OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
+
+                    b.Property<string>("creator")
+                        .HasColumnType("NVARCHAR2(2000)");
+
+                    b.Property<DateTimeOffset?>("cretoredat")
+                        .HasColumnType("TIMESTAMP(7) WITH TIME ZONE");
+
+                    b.Property<bool>("deleted")
+                        .HasColumnType("NUMBER(1)");
+
+                    b.Property<string>("token")
+                        .HasColumnType("NVARCHAR2(2000)");
+
+                    b.Property<DateTimeOffset?>("updateat")
+                        .HasColumnType("TIMESTAMP(7) WITH TIME ZONE");
+
+                    b.Property<int?>("userid")
+                        .HasColumnType("NUMBER(10)");
+
+                    b.HasKey("id");
+
+                    b.HasIndex("userid");
+
+                    b.ToTable("tokens");
+                });
+
             modelBuilder.Entity("truyenthongso.Models.User", b =>
                 {
                     b.Property<int>("id")
@@ -606,6 +813,9 @@ namespace truyenthongso.Migrations
                         .HasColumnType("NUMBER(10)");
 
                     OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
+
+                    b.Property<bool>("Action")
+                        .HasColumnType("NUMBER(1)");
 
                     b.Property<string>("Address")
                         .HasColumnType("NVARCHAR2(2000)");
@@ -634,11 +844,17 @@ namespace truyenthongso.Migrations
                     b.Property<string>("FullName")
                         .HasColumnType("NVARCHAR2(2000)");
 
+                    b.Property<string>("Image")
+                        .HasColumnType("NVARCHAR2(2000)");
+
                     b.Property<string>("Password")
                         .HasColumnType("NVARCHAR2(2000)");
 
                     b.Property<bool?>("Paythefee")
                         .HasColumnType("NUMBER(1)");
+
+                    b.Property<string>("PublicId")
+                        .HasColumnType("NVARCHAR2(2000)");
 
                     b.Property<int?>("Start")
                         .HasColumnType("NUMBER(10)");
@@ -646,8 +862,11 @@ namespace truyenthongso.Migrations
                     b.Property<string>("UserName")
                         .HasColumnType("NVARCHAR2(2000)");
 
-                    b.Property<string>("cretoredit")
+                    b.Property<string>("creator")
                         .HasColumnType("NVARCHAR2(2000)");
+
+                    b.Property<DateTimeOffset?>("cretoredat")
+                        .HasColumnType("TIMESTAMP(7) WITH TIME ZONE");
 
                     b.Property<bool>("deleted")
                         .HasColumnType("NUMBER(1)");
@@ -655,11 +874,49 @@ namespace truyenthongso.Migrations
                     b.Property<int?>("role_id")
                         .HasColumnType("NUMBER(10)");
 
+                    b.Property<DateTimeOffset?>("updateat")
+                        .HasColumnType("TIMESTAMP(7) WITH TIME ZONE");
+
                     b.HasKey("id");
 
                     b.HasIndex("role_id");
 
                     b.ToTable("users");
+                });
+
+            modelBuilder.Entity("truyenthongso.Models.UserStoryView", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("NUMBER(10)");
+
+                    OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
+
+                    b.Property<string>("creator")
+                        .HasColumnType("NVARCHAR2(2000)");
+
+                    b.Property<DateTimeOffset?>("cretoredat")
+                        .HasColumnType("TIMESTAMP(7) WITH TIME ZONE");
+
+                    b.Property<bool>("deleted")
+                        .HasColumnType("NUMBER(1)");
+
+                    b.Property<int?>("post_id")
+                        .HasColumnType("NUMBER(10)");
+
+                    b.Property<DateTimeOffset?>("updateat")
+                        .HasColumnType("TIMESTAMP(7) WITH TIME ZONE");
+
+                    b.Property<int?>("user_id")
+                        .HasColumnType("NUMBER(10)");
+
+                    b.HasKey("id");
+
+                    b.HasIndex("post_id");
+
+                    b.HasIndex("user_id");
+
+                    b.ToTable("userStoryViews");
                 });
 
             modelBuilder.Entity("truyenthongso.Models.Comment", b =>
@@ -681,6 +938,16 @@ namespace truyenthongso.Migrations
 
             modelBuilder.Entity("truyenthongso.Models.CommentDescription", b =>
                 {
+                    b.HasOne("truyenthongso.Models.CommentDescription", "CommentDescription_id3")
+                        .WithMany("commentDescriptions3")
+                        .HasForeignKey("CommentDescript3_2")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.HasOne("truyenthongso.Models.CommentDescription", "CommentDescription_id2")
+                        .WithMany("commentDescriptions2")
+                        .HasForeignKey("CommentDescription_id")
+                        .OnDelete(DeleteBehavior.Restrict);
+
                     b.HasOne("truyenthongso.Models.Comment", "comment")
                         .WithMany("CommentDescriptions")
                         .HasForeignKey("Comment_id")
@@ -690,6 +957,10 @@ namespace truyenthongso.Migrations
                         .WithMany("CommentDescriptions")
                         .HasForeignKey("User_id")
                         .OnDelete(DeleteBehavior.Restrict);
+
+                    b.Navigation("CommentDescription_id2");
+
+                    b.Navigation("CommentDescription_id3");
 
                     b.Navigation("comment");
 
@@ -704,6 +975,23 @@ namespace truyenthongso.Migrations
                         .OnDelete(DeleteBehavior.Restrict);
 
                     b.Navigation("user");
+                });
+
+            modelBuilder.Entity("truyenthongso.Models.Friendship", b =>
+                {
+                    b.HasOne("truyenthongso.Models.User", "user1")
+                        .WithMany("Friendships1")
+                        .HasForeignKey("UserId1")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.HasOne("truyenthongso.Models.User", "user2")
+                        .WithMany("Friendships2")
+                        .HasForeignKey("UserId2")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.Navigation("user1");
+
+                    b.Navigation("user2");
                 });
 
             modelBuilder.Entity("truyenthongso.Models.Group_Role", b =>
@@ -847,6 +1135,16 @@ namespace truyenthongso.Migrations
                     b.Navigation("tag");
                 });
 
+            modelBuilder.Entity("truyenthongso.Models.Token", b =>
+                {
+                    b.HasOne("truyenthongso.Models.User", "user")
+                        .WithMany("tokens")
+                        .HasForeignKey("userid")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.Navigation("user");
+                });
+
             modelBuilder.Entity("truyenthongso.Models.User", b =>
                 {
                     b.HasOne("truyenthongso.Models.Role", "role")
@@ -857,6 +1155,23 @@ namespace truyenthongso.Migrations
                     b.Navigation("role");
                 });
 
+            modelBuilder.Entity("truyenthongso.Models.UserStoryView", b =>
+                {
+                    b.HasOne("truyenthongso.Models.Post", "post")
+                        .WithMany("userStoryViews")
+                        .HasForeignKey("post_id")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.HasOne("truyenthongso.Models.User", "user")
+                        .WithMany("userStoryViews")
+                        .HasForeignKey("user_id")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.Navigation("post");
+
+                    b.Navigation("user");
+                });
+
             modelBuilder.Entity("truyenthongso.Models.Category", b =>
                 {
                     b.Navigation("Posts");
@@ -865,6 +1180,13 @@ namespace truyenthongso.Migrations
             modelBuilder.Entity("truyenthongso.Models.Comment", b =>
                 {
                     b.Navigation("CommentDescriptions");
+                });
+
+            modelBuilder.Entity("truyenthongso.Models.CommentDescription", b =>
+                {
+                    b.Navigation("commentDescriptions2");
+
+                    b.Navigation("commentDescriptions3");
                 });
 
             modelBuilder.Entity("truyenthongso.Models.Group", b =>
@@ -893,6 +1215,8 @@ namespace truyenthongso.Migrations
                     b.Navigation("Sheres");
 
                     b.Navigation("TagPosts");
+
+                    b.Navigation("userStoryViews");
                 });
 
             modelBuilder.Entity("truyenthongso.Models.Role", b =>
@@ -915,6 +1239,10 @@ namespace truyenthongso.Migrations
 
                     b.Navigation("Complaintss");
 
+                    b.Navigation("Friendships1");
+
+                    b.Navigation("Friendships2");
+
                     b.Navigation("Interests");
 
                     b.Navigation("Likes");
@@ -926,6 +1254,10 @@ namespace truyenthongso.Migrations
                     b.Navigation("Ratings");
 
                     b.Navigation("Sheres");
+
+                    b.Navigation("tokens");
+
+                    b.Navigation("userStoryViews");
                 });
 #pragma warning restore 612, 618
         }

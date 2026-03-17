@@ -10,6 +10,9 @@ namespace truyenthongso.Models
         public string? FullName { get; set; }
         public int Age { get; set; }
         public bool? Paythefee { get; set; }
+        public bool Action { get; set; }
+        public string? Image { get; set; }
+        public string? PublicId { get; set; }
         public string? Commune { get; set; }
         public string? District { get; set; }
         public string? City { get; set; }
@@ -28,5 +31,10 @@ namespace truyenthongso.Models
         public ICollection<Rating>? Ratings { get; set; }
         public ICollection<Comment>? Comments { get; set; }
         public ICollection<CommentDescription>? CommentDescriptions { get; set; }
+        public ICollection<Token>? tokens { get; set; }
+        public ICollection<Friendship>? Friendships1 { get; set; }
+        public ICollection<Friendship>? Friendships2 { get; set; }
+        public ICollection<UserStoryView>? userStoryViews { get; set; }
+        public ICollection<PostUserTag>? postUserTagss { get; set; }
     }
 }

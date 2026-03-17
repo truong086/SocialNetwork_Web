@@ -9,11 +9,17 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = truyenthongso
 build_property.RootNamespace = truyenthongso
-build_property.ProjectDir = C:\Users\ASUS\source\repos\truyenthongso\truyenthongso\
+build_property.ProjectDir = C:\Users\haune\Desktop\MangXaHoi\truyenthongso\truyenthongso\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\ASUS\source\repos\truyenthongso\truyenthongso
+build_property.MSBuildProjectDirectory = C:\Users\haune\Desktop\MangXaHoi\truyenthongso\truyenthongso
 build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 6.0
+build_property.EnableCodeStyleSeverity = 
+
+[C:/Users/haune/Desktop/MangXaHoi/truyenthongso/truyenthongso/Views/Shared/EmailTemplate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVtYWlsVGVtcGxhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 

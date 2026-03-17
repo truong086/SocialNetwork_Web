@@ -1,14 +1,23 @@
 ﻿using CloudinaryDotNet;
+using Hangfire;
+using Hangfire.Redis.StackExchange;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Cors.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using OfficeOpenXml;
+using Quartz;
+using StackExchange.Redis;
 using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using truyenthongso.Clouds;
+using truyenthongso.EmailConfig;
 using truyenthongso.Models;
+using truyenthongso.PythonAI;
+using truyenthongso.QuartzService;
+using truyenthongso.Service;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -46,10 +55,19 @@ corsBuilder.WithOrigins("http://localhost:8080"); // Đây là Url bên frontEnd
 corsBuilder.AllowCredentials();
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowSpecificOrigin", corsBuilder.Build());
+    options.AddPolicy("AllowFrontend", corsBuilder.Build());
 });
 
 #endregion
+
+// Cấu hình Redis cho Hangfire
+builder.Services.AddHangfire(config =>
+    config.UseRedisStorage("localhost:6379", new RedisStorageOptions
+    {
+        Prefix = "hangfire:"
+    }));
+
+builder.Services.AddHangfireServer();
 
 builder.Services.AddDbContext<DBContext>(options =>
     options.UseOracle(builder.Configuration.GetConnectionString("MyDB")));
@@ -111,14 +129,52 @@ var cloudinary = new Cloudinary(cloudinaryAccount);
 // Đăng ký Cloudinary làm một dịch vụ Singleton
 builder.Services.AddSingleton(cloudinary);
 builder.Services.Configure<Cloud>(builder.Configuration.GetSection("Cloud"));
+ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
+builder.Services.AddQuartz(q =>
+{
+    q.UseMicrosoftDependencyInjectionJobFactory();
+    var jobKey = new JobKey("TuDongMoiTuan");
+    q.AddJob<TuDongMoiTuan>(Otp => Otp.WithIdentity(jobKey));
+    q.AddTrigger(otps => otps.ForJob(jobKey).WithIdentity("WeeklyTrigger")
+    .StartNow()
+    .WithCronSchedule("0 0 0/1 * * ?"));
+    //.WithCronSchedule("0 0/1 * * * ?")); // "0/1" là chạy mỗi phút, để "1" là chỉ chạy 1 phút lần đầu
+});
 
+builder.Services.AddSingleton<IConnectionMultiplexer>(sp => ConnectionMultiplexer.Connect("localhost:6379,abortConnect=false"));
 builder.Services.AddSwaggerGen();
 // Đăng ký HostedService cho Quartz.NET
 //builder.Services.AddQuartzHostedService(q => q.WaitForJobsToComplete = true);
 builder.Services.AddAuthentication(); // Sử dụng phân quyền
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+builder.Services.Configure<Jwt>(builder.Configuration.GetSection("Jwt"));
+builder.Services.Configure<EmailSetting>(builder.Configuration.GetSection("EmailSettings"));
+builder.Services.AddScoped<IGroupService, GroupService>();
+builder.Services.AddScoped<IRoleService, RoleService>();
+builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IUserNameService, UserNameService>();
+builder.Services.AddScoped<ICategoryService, CategoryService>();
+builder.Services.AddScoped<IProductService, ProductService>();
+builder.Services.AddScoped<IAIGentsService, AIGentsService>();
+builder.Services.AddScoped<IAIService, AIService>();
+builder.Services.AddScoped<SendEmais>();
+builder.Services.AddScoped<KiemTraBase64>();
+builder.Services.AddControllers();
+builder.Services.AddAuthentication(); // nếu có
+builder.Services.AddAuthorization();
+
+// Đăng ký IHttpContextAccessor
+builder.Services.AddHttpContextAccessor();
+
+builder.Services.AddMvc();
+builder.Services.AddControllersWithViews();
+builder.Services.AddDistributedMemoryCache();
+builder.Services.AddHttpContextAccessor();
+builder.Services.AddHttpClient();
+builder.Services.AddResponseCompression();
 var app = builder.Build();
 
+// Configure the HTTP request pipeline.
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment() || true)
 {
@@ -126,17 +182,18 @@ if (app.Environment.IsDevelopment() || true)
     app.UseSwaggerUI();
 }
 
-app.UseCors("AllowSpecificOrigin");
-
+app.UseResponseCompression();
 app.UseHttpsRedirection();
 
-app.UseAuthorization();
+app.UseCors("AllowFrontend");
 
-app.MapControllers();
-
-app.UseCookiePolicy();
 app.UseRouting();
+// Dashboard để theo dõi job (tùy chọn)
+app.UseHangfireDashboard("/hangfire");
 
 app.UseAuthentication();
+app.UseAuthorization();
 
+app.UseCookiePolicy();
+app.MapControllers();
 app.Run();

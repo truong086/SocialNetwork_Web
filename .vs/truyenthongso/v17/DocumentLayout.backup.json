@@ -1,0 +1,836 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|c:\\users\\haune\\desktop\\mangxahoi\\truyenthongso\\truyenthongso\\service\\friendshipservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|solutionrelative:truyenthongso\\service\\friendshipservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|c:\\users\\haune\\desktop\\mangxahoi\\truyenthongso\\truyenthongso\\service\\groupservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|solutionrelative:truyenthongso\\service\\groupservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|c:\\users\\haune\\desktop\\mangxahoi\\truyenthongso\\truyenthongso\\service\\categoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|solutionrelative:truyenthongso\\service\\categoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|c:\\users\\haune\\desktop\\mangxahoi\\truyenthongso\\truyenthongso\\common\\formattaguser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|solutionrelative:truyenthongso\\common\\formattaguser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|c:\\users\\haune\\desktop\\mangxahoi\\truyenthongso\\truyenthongso\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|solutionrelative:truyenthongso\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|c:\\users\\haune\\desktop\\mangxahoi\\truyenthongso\\truyenthongso\\models\\dbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|solutionrelative:truyenthongso\\models\\dbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|c:\\users\\haune\\desktop\\mangxahoi\\truyenthongso\\truyenthongso\\clouds\\cloud.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|solutionrelative:truyenthongso\\clouds\\cloud.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|c:\\users\\haune\\desktop\\mangxahoi\\truyenthongso\\truyenthongso\\clouds\\kiemtradinhdangfile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|solutionrelative:truyenthongso\\clouds\\kiemtradinhdangfile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|c:\\users\\haune\\desktop\\mangxahoi\\truyenthongso\\truyenthongso\\clouds\\uploadcloud.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|solutionrelative:truyenthongso\\clouds\\uploadcloud.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|c:\\users\\haune\\desktop\\mangxahoi\\truyenthongso\\truyenthongso\\common\\encryptionhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|solutionrelative:truyenthongso\\common\\encryptionhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|c:\\users\\haune\\desktop\\mangxahoi\\truyenthongso\\truyenthongso\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|solutionrelative:truyenthongso\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|c:\\users\\haune\\desktop\\mangxahoi\\truyenthongso\\truyenthongso\\controllers\\groupcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|solutionrelative:truyenthongso\\controllers\\groupcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|c:\\users\\haune\\desktop\\mangxahoi\\truyenthongso\\truyenthongso\\controllers\\excelcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|solutionrelative:truyenthongso\\controllers\\excelcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|c:\\users\\haune\\desktop\\mangxahoi\\truyenthongso\\truyenthongso\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|solutionrelative:truyenthongso\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|c:\\users\\haune\\desktop\\mangxahoi\\truyenthongso\\truyenthongso\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|solutionrelative:truyenthongso\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|c:\\users\\haune\\desktop\\mangxahoi\\truyenthongso\\truyenthongso\\common\\baseentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|solutionrelative:truyenthongso\\common\\baseentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|c:\\users\\haune\\desktop\\mangxahoi\\truyenthongso\\truyenthongso\\pythonai\\iaigentsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|solutionrelative:truyenthongso\\pythonai\\iaigentsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|c:\\users\\haune\\desktop\\mangxahoi\\truyenthongso\\truyenthongso\\controllers\\aigentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|solutionrelative:truyenthongso\\controllers\\aigentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|c:\\users\\haune\\desktop\\mangxahoi\\truyenthongso\\truyenthongso\\service\\usernameservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|solutionrelative:truyenthongso\\service\\usernameservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|c:\\users\\haune\\desktop\\mangxahoi\\truyenthongso\\truyenthongso\\pythonai\\aiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|solutionrelative:truyenthongso\\pythonai\\aiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|c:\\users\\haune\\desktop\\mangxahoi\\truyenthongso\\truyenthongso\\pythonai\\aiinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|solutionrelative:truyenthongso\\pythonai\\aiinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|c:\\users\\haune\\desktop\\mangxahoi\\truyenthongso\\truyenthongso\\quartzservice\\tudongmoituan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|solutionrelative:truyenthongso\\quartzservice\\tudongmoituan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|c:\\users\\haune\\desktop\\mangxahoi\\truyenthongso\\truyenthongso\\common\\gentoken.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|solutionrelative:truyenthongso\\common\\gentoken.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|c:\\users\\haune\\desktop\\mangxahoi\\truyenthongso\\truyenthongso\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|solutionrelative:truyenthongso\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|c:\\users\\haune\\desktop\\mangxahoi\\truyenthongso\\truyenthongso\\emailconfig\\sendemais.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|solutionrelative:truyenthongso\\emailconfig\\sendemais.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|c:\\users\\haune\\desktop\\mangxahoi\\truyenthongso\\truyenthongso\\emailconfig\\emailsetting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|solutionrelative:truyenthongso\\emailconfig\\emailsetting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|c:\\users\\haune\\desktop\\mangxahoi\\truyenthongso\\truyenthongso\\controllers\\rolecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|solutionrelative:truyenthongso\\controllers\\rolecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|c:\\users\\haune\\desktop\\mangxahoi\\truyenthongso\\truyenthongso\\service\\roleservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|solutionrelative:truyenthongso\\service\\roleservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|c:\\users\\haune\\desktop\\mangxahoi\\truyenthongso\\truyenthongso\\models\\tag_post.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|solutionrelative:truyenthongso\\models\\tag_post.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|c:\\users\\haune\\desktop\\mangxahoi\\truyenthongso\\truyenthongso\\viewmodel\\categorydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|solutionrelative:truyenthongso\\viewmodel\\categorydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|c:\\users\\haune\\desktop\\mangxahoi\\truyenthongso\\truyenthongso\\service\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|solutionrelative:truyenthongso\\service\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|c:\\users\\haune\\desktop\\mangxahoi\\truyenthongso\\truyenthongso\\common\\pagelist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|solutionrelative:truyenthongso\\common\\pagelist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|c:\\users\\haune\\desktop\\mangxahoi\\truyenthongso\\truyenthongso\\common\\ipagelist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|solutionrelative:truyenthongso\\common\\ipagelist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|c:\\users\\haune\\desktop\\mangxahoi\\truyenthongso\\truyenthongso\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|solutionrelative:truyenthongso\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|c:\\users\\haune\\desktop\\mangxahoi\\truyenthongso\\truyenthongso\\viewmodel\\actionuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|solutionrelative:truyenthongso\\viewmodel\\actionuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|c:\\users\\haune\\desktop\\mangxahoi\\truyenthongso\\truyenthongso\\mapper\\usermapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|solutionrelative:truyenthongso\\mapper\\usermapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|c:\\users\\haune\\desktop\\mangxahoi\\truyenthongso\\truyenthongso\\service\\iroleservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|solutionrelative:truyenthongso\\service\\iroleservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|c:\\users\\haune\\desktop\\mangxahoi\\truyenthongso\\truyenthongso\\mapper\\rolemapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|solutionrelative:truyenthongso\\mapper\\rolemapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|c:\\users\\haune\\desktop\\mangxahoi\\truyenthongso\\truyenthongso\\viewmodel\\roledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|solutionrelative:truyenthongso\\viewmodel\\roledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|c:\\users\\haune\\desktop\\mangxahoi\\truyenthongso\\truyenthongso\\service\\igroupservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|solutionrelative:truyenthongso\\service\\igroupservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|c:\\users\\haune\\desktop\\mangxahoi\\truyenthongso\\truyenthongso\\clouds\\kiemtrabase64.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|solutionrelative:truyenthongso\\clouds\\kiemtrabase64.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|c:\\users\\haune\\desktop\\mangxahoi\\truyenthongso\\truyenthongso\\clouds\\kiemtradinhdangbase64.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|solutionrelative:truyenthongso\\clouds\\kiemtradinhdangbase64.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|c:\\users\\haune\\desktop\\mangxahoi\\truyenthongso\\truyenthongso\\clouds\\chuyenfile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|solutionrelative:truyenthongso\\clouds\\chuyenfile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|c:\\users\\haune\\desktop\\mangxahoi\\truyenthongso\\truyenthongso\\viewmodel\\groupdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|solutionrelative:truyenthongso\\viewmodel\\groupdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|c:\\users\\haune\\desktop\\mangxahoi\\truyenthongso\\truyenthongso\\models\\group_role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|solutionrelative:truyenthongso\\models\\group_role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|c:\\users\\haune\\desktop\\mangxahoi\\truyenthongso\\truyenthongso\\migrations\\20250525152935_dbs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|solutionrelative:truyenthongso\\migrations\\20250525152935_dbs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|c:\\users\\haune\\desktop\\mangxahoi\\truyenthongso\\truyenthongso\\migrations\\20250602012957_updatedb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|solutionrelative:truyenthongso\\migrations\\20250602012957_updatedb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|c:\\users\\haune\\desktop\\mangxahoi\\truyenthongso\\truyenthongso\\migrations\\20250607054801_dbupdate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|solutionrelative:truyenthongso\\migrations\\20250607054801_dbupdate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FriendShipService.cs",
+              "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Service\\FriendShipService.cs",
+              "RelativeDocumentMoniker": "truyenthongso\\Service\\FriendShipService.cs",
+              "ToolTip": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Service\\FriendShipService.cs",
+              "RelativeToolTip": "truyenthongso\\Service\\FriendShipService.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAYwEkAAABwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-17T02:41:14.999Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\appsettings.json",
+              "RelativeDocumentMoniker": "truyenthongso\\appsettings.json",
+              "ToolTip": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\appsettings.json",
+              "RelativeToolTip": "truyenthongso\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-03-17T02:41:14.999Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "EncryptionHelper.cs",
+              "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Common\\EncryptionHelper.cs",
+              "RelativeDocumentMoniker": "truyenthongso\\Common\\EncryptionHelper.cs",
+              "ToolTip": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Common\\EncryptionHelper.cs",
+              "RelativeToolTip": "truyenthongso\\Common\\EncryptionHelper.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAYwCIAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-17T02:41:15.008Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "uploadCloud.cs",
+              "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Clouds\\uploadCloud.cs",
+              "RelativeDocumentMoniker": "truyenthongso\\Clouds\\uploadCloud.cs",
+              "ToolTip": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Clouds\\uploadCloud.cs",
+              "RelativeToolTip": "truyenthongso\\Clouds\\uploadCloud.cs",
+              "ViewState": "AgIAAEgBAAAAAAAAAAAqwFMBAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-17T02:41:15.008Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "FormatTagUser.cs",
+              "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Common\\FormatTagUser.cs",
+              "RelativeDocumentMoniker": "truyenthongso\\Common\\FormatTagUser.cs",
+              "ToolTip": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Common\\FormatTagUser.cs",
+              "RelativeToolTip": "truyenthongso\\Common\\FormatTagUser.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABIAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-17T02:41:15.034Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ProductController.cs",
+              "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Controllers\\ProductController.cs",
+              "RelativeDocumentMoniker": "truyenthongso\\Controllers\\ProductController.cs",
+              "ToolTip": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Controllers\\ProductController.cs",
+              "RelativeToolTip": "truyenthongso\\Controllers\\ProductController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-17T02:41:14.999Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "GroupController.cs",
+              "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Controllers\\GroupController.cs",
+              "RelativeDocumentMoniker": "truyenthongso\\Controllers\\GroupController.cs",
+              "ToolTip": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Controllers\\GroupController.cs",
+              "RelativeToolTip": "truyenthongso\\Controllers\\GroupController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-17T02:41:14.999Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CategoryService.cs",
+              "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Service\\CategoryService.cs",
+              "RelativeDocumentMoniker": "truyenthongso\\Service\\CategoryService.cs",
+              "ToolTip": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Service\\CategoryService.cs",
+              "RelativeToolTip": "truyenthongso\\Service\\CategoryService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-17T02:41:15.018Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "GroupService.cs",
+              "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Service\\GroupService.cs",
+              "RelativeDocumentMoniker": "truyenthongso\\Service\\GroupService.cs",
+              "ToolTip": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Service\\GroupService.cs",
+              "RelativeToolTip": "truyenthongso\\Service\\GroupService.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAwAwAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-17T02:41:15.018Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "KiemTraDinhDangFile.cs",
+              "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Clouds\\KiemTraDinhDangFile.cs",
+              "RelativeDocumentMoniker": "truyenthongso\\Clouds\\KiemTraDinhDangFile.cs",
+              "ToolTip": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Clouds\\KiemTraDinhDangFile.cs",
+              "RelativeToolTip": "truyenthongso\\Clouds\\KiemTraDinhDangFile.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-17T02:41:15.008Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "DBContext.cs",
+              "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Models\\DBContext.cs",
+              "RelativeDocumentMoniker": "truyenthongso\\Models\\DBContext.cs",
+              "ToolTip": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Models\\DBContext.cs",
+              "RelativeToolTip": "truyenthongso\\Models\\DBContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEUAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-17T02:41:14.999Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "AiGentsController.cs",
+              "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Controllers\\AiGentsController.cs",
+              "RelativeDocumentMoniker": "truyenthongso\\Controllers\\AiGentsController.cs",
+              "ToolTip": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Controllers\\AiGentsController.cs",
+              "RelativeToolTip": "truyenthongso\\Controllers\\AiGentsController.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAMwBsAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-17T02:41:14.999Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Cloud.cs",
+              "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Clouds\\Cloud.cs",
+              "RelativeDocumentMoniker": "truyenthongso\\Clouds\\Cloud.cs",
+              "ToolTip": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Clouds\\Cloud.cs",
+              "RelativeToolTip": "truyenthongso\\Clouds\\Cloud.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-17T02:41:14.842Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "BaseEntity.cs",
+              "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Common\\BaseEntity.cs",
+              "RelativeDocumentMoniker": "truyenthongso\\Common\\BaseEntity.cs",
+              "ToolTip": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Common\\BaseEntity.cs",
+              "RelativeToolTip": "truyenthongso\\Common\\BaseEntity.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-17T02:41:15.008Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ExcelController.cs",
+              "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Controllers\\ExcelController.cs",
+              "RelativeDocumentMoniker": "truyenthongso\\Controllers\\ExcelController.cs",
+              "ToolTip": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Controllers\\ExcelController.cs",
+              "RelativeToolTip": "truyenthongso\\Controllers\\ExcelController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-17T02:41:15.008Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Category.cs",
+              "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Models\\Category.cs",
+              "RelativeDocumentMoniker": "truyenthongso\\Models\\Category.cs",
+              "ToolTip": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Models\\Category.cs",
+              "RelativeToolTip": "truyenthongso\\Models\\Category.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-17T02:41:15.008Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "CategoryController.cs",
+              "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Controllers\\CategoryController.cs",
+              "RelativeDocumentMoniker": "truyenthongso\\Controllers\\CategoryController.cs",
+              "ToolTip": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Controllers\\CategoryController.cs",
+              "RelativeToolTip": "truyenthongso\\Controllers\\CategoryController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-17T02:41:15.018Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "AIInput.cs",
+              "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\PythonAI\\AIInput.cs",
+              "RelativeDocumentMoniker": "truyenthongso\\PythonAI\\AIInput.cs",
+              "ToolTip": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\PythonAI\\AIInput.cs",
+              "RelativeToolTip": "truyenthongso\\PythonAI\\AIInput.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAA7wAYAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-17T02:41:15.018Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "IAIGentsService.cs",
+              "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\PythonAI\\IAIGentsService.cs",
+              "RelativeDocumentMoniker": "truyenthongso\\PythonAI\\IAIGentsService.cs",
+              "ToolTip": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\PythonAI\\IAIGentsService.cs",
+              "RelativeToolTip": "truyenthongso\\PythonAI\\IAIGentsService.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAWwAcAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-17T02:41:15.018Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "AIService.cs",
+              "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\PythonAI\\AIService.cs",
+              "RelativeDocumentMoniker": "truyenthongso\\PythonAI\\AIService.cs",
+              "ToolTip": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\PythonAI\\AIService.cs",
+              "RelativeToolTip": "truyenthongso\\PythonAI\\AIService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-17T02:41:15.018Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "UserNameService.cs",
+              "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Service\\UserNameService.cs",
+              "RelativeDocumentMoniker": "truyenthongso\\Service\\UserNameService.cs",
+              "ToolTip": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Service\\UserNameService.cs",
+              "RelativeToolTip": "truyenthongso\\Service\\UserNameService.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAYwAkAAABIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-17T02:41:15.029Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "GenToken.cs",
+              "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Common\\GenToken.cs",
+              "RelativeDocumentMoniker": "truyenthongso\\Common\\GenToken.cs",
+              "ToolTip": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Common\\GenToken.cs",
+              "RelativeToolTip": "truyenthongso\\Common\\GenToken.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAIBJwA0AAABiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-17T02:41:15.029Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "TuDongMoiTuan.cs",
+              "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\QuartzService\\TuDongMoiTuan.cs",
+              "RelativeDocumentMoniker": "truyenthongso\\QuartzService\\TuDongMoiTuan.cs",
+              "ToolTip": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\QuartzService\\TuDongMoiTuan.cs",
+              "RelativeToolTip": "truyenthongso\\QuartzService\\TuDongMoiTuan.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-17T02:41:15.034Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Models\\User.cs",
+              "RelativeDocumentMoniker": "truyenthongso\\Models\\User.cs",
+              "ToolTip": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Models\\User.cs",
+              "RelativeToolTip": "truyenthongso\\Models\\User.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAA9wCAAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-17T02:41:15.034Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "SendEmais.cs",
+              "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\EmailConfig\\SendEmais.cs",
+              "RelativeDocumentMoniker": "truyenthongso\\EmailConfig\\SendEmais.cs",
+              "ToolTip": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\EmailConfig\\SendEmais.cs",
+              "RelativeToolTip": "truyenthongso\\EmailConfig\\SendEmais.cs",
+              "ViewState": "AgIAAEEAAAAAAAAAAAAgwEkAAABJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-17T02:41:15.039Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "EmailSetting.cs",
+              "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\EmailConfig\\EmailSetting.cs",
+              "RelativeDocumentMoniker": "truyenthongso\\EmailConfig\\EmailSetting.cs",
+              "ToolTip": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\EmailConfig\\EmailSetting.cs",
+              "RelativeToolTip": "truyenthongso\\EmailConfig\\EmailSetting.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-17T02:41:15.04Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "RoleController.cs",
+              "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Controllers\\RoleController.cs",
+              "RelativeDocumentMoniker": "truyenthongso\\Controllers\\RoleController.cs",
+              "ToolTip": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Controllers\\RoleController.cs",
+              "RelativeToolTip": "truyenthongso\\Controllers\\RoleController.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAA3wAkAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-17T02:41:15.04Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "RoleService.cs",
+              "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Service\\RoleService.cs",
+              "RelativeDocumentMoniker": "truyenthongso\\Service\\RoleService.cs",
+              "ToolTip": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Service\\RoleService.cs",
+              "RelativeToolTip": "truyenthongso\\Service\\RoleService.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAIBJwBAAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-17T02:41:15.04Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "Tag_Post.cs",
+              "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Models\\Tag_Post.cs",
+              "RelativeDocumentMoniker": "truyenthongso\\Models\\Tag_Post.cs",
+              "ToolTip": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Models\\Tag_Post.cs",
+              "RelativeToolTip": "truyenthongso\\Models\\Tag_Post.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-17T02:41:15.04Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "CategoryDTO.cs",
+              "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\ViewModel\\CategoryDTO.cs",
+              "RelativeDocumentMoniker": "truyenthongso\\ViewModel\\CategoryDTO.cs",
+              "ToolTip": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\ViewModel\\CategoryDTO.cs",
+              "RelativeToolTip": "truyenthongso\\ViewModel\\CategoryDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-17T02:41:15.04Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Service\\UserService.cs",
+              "RelativeDocumentMoniker": "truyenthongso\\Service\\UserService.cs",
+              "ToolTip": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Service\\UserService.cs",
+              "RelativeToolTip": "truyenthongso\\Service\\UserService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-17T02:41:15.04Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "IPageList.cs",
+              "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Common\\IPageList.cs",
+              "RelativeDocumentMoniker": "truyenthongso\\Common\\IPageList.cs",
+              "ToolTip": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Common\\IPageList.cs",
+              "RelativeToolTip": "truyenthongso\\Common\\IPageList.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-17T02:41:15.049Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "PageList.cs",
+              "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Common\\PageList.cs",
+              "RelativeDocumentMoniker": "truyenthongso\\Common\\PageList.cs",
+              "ToolTip": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Common\\PageList.cs",
+              "RelativeToolTip": "truyenthongso\\Common\\PageList.cs",
+              "ViewState": "AgIAAGMAAAAAAAAAAAAiwGoAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-17T02:41:15.052Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "truyenthongso\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Controllers\\UserController.cs",
+              "RelativeToolTip": "truyenthongso\\Controllers\\UserController.cs",
+              "ViewState": "AgIAADIAAAAAAAAAAAAswD4AAABNAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-17T02:41:15.052Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "20250607054801_dbupdate.cs",
+              "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Migrations\\20250607054801_dbupdate.cs",
+              "RelativeDocumentMoniker": "truyenthongso\\Migrations\\20250607054801_dbupdate.cs",
+              "ToolTip": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Migrations\\20250607054801_dbupdate.cs",
+              "RelativeToolTip": "truyenthongso\\Migrations\\20250607054801_dbupdate.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-17T02:41:15.052Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "UserMapper.cs",
+              "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Mapper\\UserMapper.cs",
+              "RelativeDocumentMoniker": "truyenthongso\\Mapper\\UserMapper.cs",
+              "ToolTip": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Mapper\\UserMapper.cs",
+              "RelativeToolTip": "truyenthongso\\Mapper\\UserMapper.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAQwAsAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-17T02:41:15.052Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "ActionUser.cs",
+              "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\ViewModel\\ActionUser.cs",
+              "RelativeDocumentMoniker": "truyenthongso\\ViewModel\\ActionUser.cs",
+              "ToolTip": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\ViewModel\\ActionUser.cs",
+              "RelativeToolTip": "truyenthongso\\ViewModel\\ActionUser.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-17T02:41:15.052Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "RoleMapper.cs",
+              "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Mapper\\RoleMapper.cs",
+              "RelativeDocumentMoniker": "truyenthongso\\Mapper\\RoleMapper.cs",
+              "ToolTip": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Mapper\\RoleMapper.cs",
+              "RelativeToolTip": "truyenthongso\\Mapper\\RoleMapper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-17T02:41:15.06Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "IRoleService.cs",
+              "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Service\\IRoleService.cs",
+              "RelativeDocumentMoniker": "truyenthongso\\Service\\IRoleService.cs",
+              "ToolTip": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Service\\IRoleService.cs",
+              "RelativeToolTip": "truyenthongso\\Service\\IRoleService.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAxwAgAAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-17T02:41:15.06Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "RoleDTo.cs",
+              "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\ViewModel\\RoleDTo.cs",
+              "RelativeDocumentMoniker": "truyenthongso\\ViewModel\\RoleDTo.cs",
+              "ToolTip": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\ViewModel\\RoleDTo.cs",
+              "RelativeToolTip": "truyenthongso\\ViewModel\\RoleDTo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-17T02:41:15.06Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "20250602012957_updatedb.cs",
+              "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Migrations\\20250602012957_updatedb.cs",
+              "RelativeDocumentMoniker": "truyenthongso\\Migrations\\20250602012957_updatedb.cs",
+              "ToolTip": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Migrations\\20250602012957_updatedb.cs",
+              "RelativeToolTip": "truyenthongso\\Migrations\\20250602012957_updatedb.cs",
+              "ViewState": "AgIAAFUAAAAAAAAAAAAQwGUAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-17T02:41:15.06Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "IGroupService.cs",
+              "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Service\\IGroupService.cs",
+              "RelativeDocumentMoniker": "truyenthongso\\Service\\IGroupService.cs",
+              "ToolTip": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Service\\IGroupService.cs",
+              "RelativeToolTip": "truyenthongso\\Service\\IGroupService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-17T02:41:15.06Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "KiemTraBase64.cs",
+              "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Clouds\\KiemTraBase64.cs",
+              "RelativeDocumentMoniker": "truyenthongso\\Clouds\\KiemTraBase64.cs",
+              "ToolTip": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Clouds\\KiemTraBase64.cs",
+              "RelativeToolTip": "truyenthongso\\Clouds\\KiemTraBase64.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-17T02:41:15.06Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "KiemTraDinhDangBase64.cs",
+              "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Clouds\\KiemTraDinhDangBase64.cs",
+              "RelativeDocumentMoniker": "truyenthongso\\Clouds\\KiemTraDinhDangBase64.cs",
+              "ToolTip": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Clouds\\KiemTraDinhDangBase64.cs",
+              "RelativeToolTip": "truyenthongso\\Clouds\\KiemTraDinhDangBase64.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-17T02:41:15.07Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "ChuyenFile.cs",
+              "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Clouds\\ChuyenFile.cs",
+              "RelativeDocumentMoniker": "truyenthongso\\Clouds\\ChuyenFile.cs",
+              "ToolTip": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Clouds\\ChuyenFile.cs",
+              "RelativeToolTip": "truyenthongso\\Clouds\\ChuyenFile.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAkwA0AAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-17T02:41:15.07Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "GroupDTO.cs",
+              "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\ViewModel\\GroupDTO.cs",
+              "RelativeDocumentMoniker": "truyenthongso\\ViewModel\\GroupDTO.cs",
+              "ToolTip": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\ViewModel\\GroupDTO.cs",
+              "RelativeToolTip": "truyenthongso\\ViewModel\\GroupDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-17T02:41:15.07Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "20250525152935_dbs.cs",
+              "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Migrations\\20250525152935_dbs.cs",
+              "RelativeDocumentMoniker": "truyenthongso\\Migrations\\20250525152935_dbs.cs",
+              "ToolTip": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Migrations\\20250525152935_dbs.cs",
+              "RelativeToolTip": "truyenthongso\\Migrations\\20250525152935_dbs.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAABLAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-17T02:41:15.07Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "Group_Role.cs",
+              "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Models\\Group_Role.cs",
+              "RelativeDocumentMoniker": "truyenthongso\\Models\\Group_Role.cs",
+              "ToolTip": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Models\\Group_Role.cs",
+              "RelativeToolTip": "truyenthongso\\Models\\Group_Role.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-17T02:41:15.07Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
