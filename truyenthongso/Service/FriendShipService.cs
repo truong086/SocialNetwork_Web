@@ -1,4 +1,8 @@
-﻿using StackExchange.Redis;
+﻿using Hangfire;
+using Hangfire.Redis.StackExchange;
+using Microsoft.EntityFrameworkCore;
+using StackExchange.Redis;
+using System.Text.Json;
 using truyenthongso.Common;
 using truyenthongso.Models;
 using truyenthongso.PythonAI;
@@ -27,6 +31,17 @@ namespace truyenthongso.Service
                 if (checkData1 == null || checkData2 == null)
                     return await Task.FromResult(PayLoad<FriendShipDTO>.CreatedFail(Status.DATANULL));
 
+                // Kiểm tra đã kết bạn chưa
+                var existed = await _context.friendships.AnyAsync(x => (x.UserId1 == data.user1 && x.UserId2 == data.user2)
+                            || (x.UserId1 == data.user2 && x.UserId2 == data.user1)
+                                && x.status == Status.AddFriend
+                            );
+
+                if (existed)
+                    return PayLoad<FriendShipDTO>.CreatedFail(Status.DATATONTAI);
+
+                using var transaction = await _context.Database.BeginTransactionAsync();
+
                 _context.friendships.Add(new Friendship
                 {
                     status = Status.AddFriend,
@@ -38,10 +53,21 @@ namespace truyenthongso.Service
 
                 _context.SaveChanges();
 
-                await _redis.SetAsync($"user:{data.user1}:friends", new[] { data.user2.ToString() });
-                await _redis.SetAsync($"user:{data.user2}:friends", new[] { data.user1.ToString() });
+                //await _redis.SetAsync($"user:{data.user1}:friends", new[] { data.user2.ToString() });
+                //await _redis.SetAsync($"user:{data.user2}:friends", new[] { data.user1.ToString() });
 
-                return await Task.FromResult(PayLoad<FriendShipDTO>.Successfully(data));
+                // Set Redis
+                await _redis.SetAsync($"user:{data.user1}:friends", data.user2.ToString());
+                await _redis.SetAsync($"user:{data.user2}:friends", data.user1.ToString());
+
+                await transaction.CommitAsync();
+
+                // Background Job, Hangfile
+                BackgroundJob.Enqueue(() => RecalculateFriendOfFriends(data.user1));
+                BackgroundJob.Enqueue(() => RecalculateFriendOfFriends(data.user2));
+
+                return PayLoad<FriendShipDTO>.Successfully(data);
+                //return await Task.FromResult(PayLoad<FriendShipDTO>.Successfully(data));
             }
             catch(Exception ex)
             {
@@ -142,6 +168,102 @@ namespace truyenthongso.Service
             {
                 return await Task.FromResult(PayLoad<object>.CreatedFail(ex.Message));
             }
+        }
+
+        public async Task saveSuggestionPro(int userId, List<SuggestionDto> list)
+        {
+            var zsetKey = $"user:{userId}:suggestions";
+            var hashKey = $"user:{userId}:suggestions:data";
+
+            // Xóa dữ liệu cũ
+            await _redis.DeleteKeyAsync(zsetKey);
+            await _redis.DeleteKeyAsync(hashKey);
+
+            // Batch (Tối ưu)
+            var zsetEntries = new List<(string member, double score)>();
+            var hashEntries = new List<(string field, string value)>();
+
+            foreach(var item in list)
+            {
+                // ZSET => ranking
+                zsetEntries.Add((item.Id.ToString(), item.MutualCount));
+
+                // HASH => data
+                hashEntries.Add((
+                        item.Id.ToString(),
+                        JsonSerializer.Serialize(item)
+                    ));
+
+                // Ghi dữ liệu vào Redis (Cực kỳ nhanh)
+                await _redis.SortedSetAddManyAsync(zsetKey, zsetEntries);
+                await _redis.HashSetManyAsync(hashKey, hashEntries);
+
+            }
+        }
+
+        public async Task<PayLoad<List<SuggestionDto>>> GetSuggestions()
+        {
+            try
+            {
+                int userId = int.Parse(_userNameService.name());
+
+                var zsetKey = $"user:{userId}:suggestions";
+                var hashKey = $"user:{userId}:suggestions:data";
+
+                var ids = await _redis.SortedSetRangeByScoreAsync(
+                        zsetKey,
+                        order: Order.Descending,
+                        take: 20
+                    );
+
+                var result = await _redis.HashGetManyAsync<SuggestionDto>(hashKey, ids);
+
+                return await Task.FromResult(PayLoad<List<SuggestionDto>>.Successfully(result));
+            }
+            catch (Exception ex) {
+                return await Task.FromResult(PayLoad<List<SuggestionDto>>.CreatedFail(ex.Message));
+            }
+        }
+
+        public async Task RecalculateSuggestions (int userId)
+        {
+            var friends = await _redis.GetSetAsync($"user:${userId}:friends");
+
+            var mutualCount = new Dictionary<int, int>();
+
+            foreach (var friendId in friends)
+            {
+                var fofList = await _redis.GetSetAsync($"user:{friendId}:friends");
+                
+                foreach(var fof in fofList)
+                {
+                    int fofId = int.Parse(fof);
+
+                    if (fofId == userId || friends.Contains(fof))
+                        continue;
+
+                    if (!mutualCount.ContainsKey(fofId))
+                        mutualCount[fofId] = 0;
+
+                    mutualCount[fofId]++;
+                }
+            }
+
+            // Lấy user Info
+            var user = await _context.users
+                .Where(u => mutualCount.Keys.Contains(u.id))
+                .Select(u => new SuggestionDto
+                {
+                    Id = u.id,
+                    Name = u.UserName,
+                    Avatar = u.Image,
+                    MutualCount = mutualCount[u.id]
+                }).ToListAsync();
+
+
+            var sorted = user.OrderByDescending(x => x.MutualCount).ToList();
+
+            await saveSuggestionPro(userId, sorted);
         }
     }
 }

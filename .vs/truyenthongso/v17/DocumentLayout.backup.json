@@ -7,6 +7,10 @@
       "RelativeMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|solutionrelative:truyenthongso\\service\\friendshipservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|c:\\users\\haune\\desktop\\mangxahoi\\truyenthongso\\truyenthongso\\viewmodel\\suggestiondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|solutionrelative:truyenthongso\\viewmodel\\suggestiondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|c:\\users\\haune\\desktop\\mangxahoi\\truyenthongso\\truyenthongso\\service\\groupservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|solutionrelative:truyenthongso\\service\\groupservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -43,10 +47,6 @@
       "RelativeMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|solutionrelative:truyenthongso\\common\\encryptionhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|c:\\users\\haune\\desktop\\mangxahoi\\truyenthongso\\truyenthongso\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|solutionrelative:truyenthongso\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|c:\\users\\haune\\desktop\\mangxahoi\\truyenthongso\\truyenthongso\\controllers\\groupcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|solutionrelative:truyenthongso\\controllers\\groupcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -71,24 +71,12 @@
       "RelativeMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|solutionrelative:truyenthongso\\pythonai\\iaigentsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|c:\\users\\haune\\desktop\\mangxahoi\\truyenthongso\\truyenthongso\\controllers\\aigentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|solutionrelative:truyenthongso\\controllers\\aigentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|c:\\users\\haune\\desktop\\mangxahoi\\truyenthongso\\truyenthongso\\service\\usernameservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|solutionrelative:truyenthongso\\service\\usernameservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|c:\\users\\haune\\desktop\\mangxahoi\\truyenthongso\\truyenthongso\\pythonai\\aiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|solutionrelative:truyenthongso\\pythonai\\aiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|c:\\users\\haune\\desktop\\mangxahoi\\truyenthongso\\truyenthongso\\pythonai\\aiinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|solutionrelative:truyenthongso\\pythonai\\aiinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|c:\\users\\haune\\desktop\\mangxahoi\\truyenthongso\\truyenthongso\\quartzservice\\tudongmoituan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|solutionrelative:truyenthongso\\quartzservice\\tudongmoituan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|c:\\users\\haune\\desktop\\mangxahoi\\truyenthongso\\truyenthongso\\common\\gentoken.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -202,8 +190,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SuggestionDto.cs",
+              "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\ViewModel\\SuggestionDto.cs",
+              "RelativeDocumentMoniker": "truyenthongso\\ViewModel\\SuggestionDto.cs",
+              "ToolTip": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\ViewModel\\SuggestionDto.cs",
+              "RelativeToolTip": "truyenthongso\\ViewModel\\SuggestionDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-18T03:34:02.474Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -212,7 +213,7 @@
               "RelativeDocumentMoniker": "truyenthongso\\Service\\FriendShipService.cs",
               "ToolTip": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Service\\FriendShipService.cs",
               "RelativeToolTip": "truyenthongso\\Service\\FriendShipService.cs",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAYwEkAAABwAAAAAAAAAA==",
+              "ViewState": "AgIAAKkAAAAAAAAAAAAwwMIAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-17T02:41:14.999Z",
               "EditorCaption": ""
@@ -220,45 +221,6 @@
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\appsettings.json",
-              "RelativeDocumentMoniker": "truyenthongso\\appsettings.json",
-              "ToolTip": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\appsettings.json",
-              "RelativeToolTip": "truyenthongso\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-03-17T02:41:14.999Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "EncryptionHelper.cs",
-              "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Common\\EncryptionHelper.cs",
-              "RelativeDocumentMoniker": "truyenthongso\\Common\\EncryptionHelper.cs",
-              "ToolTip": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Common\\EncryptionHelper.cs",
-              "RelativeToolTip": "truyenthongso\\Common\\EncryptionHelper.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAYwCIAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-17T02:41:15.008Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "uploadCloud.cs",
-              "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Clouds\\uploadCloud.cs",
-              "RelativeDocumentMoniker": "truyenthongso\\Clouds\\uploadCloud.cs",
-              "ToolTip": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Clouds\\uploadCloud.cs",
-              "RelativeToolTip": "truyenthongso\\Clouds\\uploadCloud.cs",
-              "ViewState": "AgIAAEgBAAAAAAAAAAAqwFMBAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-17T02:41:15.008Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
               "Title": "FormatTagUser.cs",
               "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Common\\FormatTagUser.cs",
               "RelativeDocumentMoniker": "truyenthongso\\Common\\FormatTagUser.cs",
@@ -266,21 +228,7 @@
               "RelativeToolTip": "truyenthongso\\Common\\FormatTagUser.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAABIAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-17T02:41:15.034Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "ProductController.cs",
-              "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Controllers\\ProductController.cs",
-              "RelativeDocumentMoniker": "truyenthongso\\Controllers\\ProductController.cs",
-              "ToolTip": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Controllers\\ProductController.cs",
-              "RelativeToolTip": "truyenthongso\\Controllers\\ProductController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-17T02:41:14.999Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-17T02:41:15.034Z"
             },
             {
               "$type": "Document",
@@ -292,12 +240,11 @@
               "RelativeToolTip": "truyenthongso\\Controllers\\GroupController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-17T02:41:14.999Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-17T02:41:14.999Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "CategoryService.cs",
               "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Service\\CategoryService.cs",
               "RelativeDocumentMoniker": "truyenthongso\\Service\\CategoryService.cs",
@@ -305,12 +252,11 @@
               "RelativeToolTip": "truyenthongso\\Service\\CategoryService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAABBAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-17T02:41:15.018Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-17T02:41:15.018Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "GroupService.cs",
               "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Service\\GroupService.cs",
               "RelativeDocumentMoniker": "truyenthongso\\Service\\GroupService.cs",
@@ -318,12 +264,11 @@
               "RelativeToolTip": "truyenthongso\\Service\\GroupService.cs",
               "ViewState": "AgIAAAsAAAAAAAAAAAAAwAwAAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-17T02:41:15.018Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-17T02:41:15.018Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "KiemTraDinhDangFile.cs",
               "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Clouds\\KiemTraDinhDangFile.cs",
               "RelativeDocumentMoniker": "truyenthongso\\Clouds\\KiemTraDinhDangFile.cs",
@@ -331,12 +276,47 @@
               "RelativeToolTip": "truyenthongso\\Clouds\\KiemTraDinhDangFile.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-17T02:41:15.008Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-17T02:41:15.008Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "uploadCloud.cs",
+              "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Clouds\\uploadCloud.cs",
+              "RelativeDocumentMoniker": "truyenthongso\\Clouds\\uploadCloud.cs",
+              "ToolTip": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Clouds\\uploadCloud.cs",
+              "RelativeToolTip": "truyenthongso\\Clouds\\uploadCloud.cs",
+              "ViewState": "AgIAAEgBAAAAAAAAAAAqwFMBAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-17T02:41:15.008Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\appsettings.json",
+              "RelativeDocumentMoniker": "truyenthongso\\appsettings.json",
+              "ToolTip": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\appsettings.json",
+              "RelativeToolTip": "truyenthongso\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-03-17T02:41:14.999Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "EncryptionHelper.cs",
+              "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Common\\EncryptionHelper.cs",
+              "RelativeDocumentMoniker": "truyenthongso\\Common\\EncryptionHelper.cs",
+              "ToolTip": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Common\\EncryptionHelper.cs",
+              "RelativeToolTip": "truyenthongso\\Common\\EncryptionHelper.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAYwCIAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-17T02:41:15.008Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "DBContext.cs",
               "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Models\\DBContext.cs",
               "RelativeDocumentMoniker": "truyenthongso\\Models\\DBContext.cs",
@@ -344,25 +324,11 @@
               "RelativeToolTip": "truyenthongso\\Models\\DBContext.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAEUAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-17T02:41:14.999Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-17T02:41:14.999Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "AiGentsController.cs",
-              "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Controllers\\AiGentsController.cs",
-              "RelativeDocumentMoniker": "truyenthongso\\Controllers\\AiGentsController.cs",
-              "ToolTip": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Controllers\\AiGentsController.cs",
-              "RelativeToolTip": "truyenthongso\\Controllers\\AiGentsController.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAMwBsAAAAzAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-17T02:41:14.999Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "Cloud.cs",
               "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Clouds\\Cloud.cs",
               "RelativeDocumentMoniker": "truyenthongso\\Clouds\\Cloud.cs",
@@ -370,8 +336,7 @@
               "RelativeToolTip": "truyenthongso\\Clouds\\Cloud.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-17T02:41:14.842Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-17T02:41:14.842Z"
             },
             {
               "$type": "Document",
@@ -383,8 +348,7 @@
               "RelativeToolTip": "truyenthongso\\Common\\BaseEntity.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-17T02:41:15.008Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-17T02:41:15.008Z"
             },
             {
               "$type": "Document",
@@ -396,8 +360,7 @@
               "RelativeToolTip": "truyenthongso\\Controllers\\ExcelController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-17T02:41:15.008Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-17T02:41:15.008Z"
             },
             {
               "$type": "Document",
@@ -409,8 +372,7 @@
               "RelativeToolTip": "truyenthongso\\Models\\Category.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-17T02:41:15.008Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-17T02:41:15.008Z"
             },
             {
               "$type": "Document",
@@ -422,12 +384,11 @@
               "RelativeToolTip": "truyenthongso\\Controllers\\CategoryController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-17T02:41:15.018Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-17T02:41:15.018Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 18,
               "Title": "AIInput.cs",
               "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\PythonAI\\AIInput.cs",
               "RelativeDocumentMoniker": "truyenthongso\\PythonAI\\AIInput.cs",
@@ -435,8 +396,7 @@
               "RelativeToolTip": "truyenthongso\\PythonAI\\AIInput.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAA7wAYAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-17T02:41:15.018Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-17T02:41:15.018Z"
             },
             {
               "$type": "Document",
@@ -448,25 +408,11 @@
               "RelativeToolTip": "truyenthongso\\PythonAI\\IAIGentsService.cs",
               "ViewState": "AgIAAAEAAAAAAAAAAAAWwAcAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-17T02:41:15.018Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-17T02:41:15.018Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "AIService.cs",
-              "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\PythonAI\\AIService.cs",
-              "RelativeDocumentMoniker": "truyenthongso\\PythonAI\\AIService.cs",
-              "ToolTip": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\PythonAI\\AIService.cs",
-              "RelativeToolTip": "truyenthongso\\PythonAI\\AIService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-17T02:41:15.018Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 17,
               "Title": "UserNameService.cs",
               "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Service\\UserNameService.cs",
               "RelativeDocumentMoniker": "truyenthongso\\Service\\UserNameService.cs",
@@ -474,12 +420,11 @@
               "RelativeToolTip": "truyenthongso\\Service\\UserNameService.cs",
               "ViewState": "AgIAAA8AAAAAAAAAAAAYwAkAAABIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-17T02:41:15.029Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-17T02:41:15.029Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 19,
               "Title": "GenToken.cs",
               "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Common\\GenToken.cs",
               "RelativeDocumentMoniker": "truyenthongso\\Common\\GenToken.cs",
@@ -487,25 +432,11 @@
               "RelativeToolTip": "truyenthongso\\Common\\GenToken.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAIBJwA0AAABiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-17T02:41:15.029Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-17T02:41:15.029Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "TuDongMoiTuan.cs",
-              "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\QuartzService\\TuDongMoiTuan.cs",
-              "RelativeDocumentMoniker": "truyenthongso\\QuartzService\\TuDongMoiTuan.cs",
-              "ToolTip": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\QuartzService\\TuDongMoiTuan.cs",
-              "RelativeToolTip": "truyenthongso\\QuartzService\\TuDongMoiTuan.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-17T02:41:15.034Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 20,
               "Title": "User.cs",
               "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Models\\User.cs",
               "RelativeDocumentMoniker": "truyenthongso\\Models\\User.cs",
@@ -513,12 +444,11 @@
               "RelativeToolTip": "truyenthongso\\Models\\User.cs",
               "ViewState": "AgIAAB0AAAAAAAAAAAA9wCAAAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-17T02:41:15.034Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-17T02:41:15.034Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 21,
               "Title": "SendEmais.cs",
               "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\EmailConfig\\SendEmais.cs",
               "RelativeDocumentMoniker": "truyenthongso\\EmailConfig\\SendEmais.cs",
@@ -526,12 +456,11 @@
               "RelativeToolTip": "truyenthongso\\EmailConfig\\SendEmais.cs",
               "ViewState": "AgIAAEEAAAAAAAAAAAAgwEkAAABJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-17T02:41:15.039Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-17T02:41:15.039Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 22,
               "Title": "EmailSetting.cs",
               "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\EmailConfig\\EmailSetting.cs",
               "RelativeDocumentMoniker": "truyenthongso\\EmailConfig\\EmailSetting.cs",
@@ -539,12 +468,11 @@
               "RelativeToolTip": "truyenthongso\\EmailConfig\\EmailSetting.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-17T02:41:15.04Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-17T02:41:15.04Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 23,
               "Title": "RoleController.cs",
               "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Controllers\\RoleController.cs",
               "RelativeDocumentMoniker": "truyenthongso\\Controllers\\RoleController.cs",
@@ -552,12 +480,11 @@
               "RelativeToolTip": "truyenthongso\\Controllers\\RoleController.cs",
               "ViewState": "AgIAACMAAAAAAAAAAAA3wAkAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-17T02:41:15.04Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-17T02:41:15.04Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 24,
               "Title": "RoleService.cs",
               "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Service\\RoleService.cs",
               "RelativeDocumentMoniker": "truyenthongso\\Service\\RoleService.cs",
@@ -565,12 +492,11 @@
               "RelativeToolTip": "truyenthongso\\Service\\RoleService.cs",
               "ViewState": "AgIAAA0AAAAAAAAAAIBJwBAAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-17T02:41:15.04Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-17T02:41:15.04Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 25,
               "Title": "Tag_Post.cs",
               "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Models\\Tag_Post.cs",
               "RelativeDocumentMoniker": "truyenthongso\\Models\\Tag_Post.cs",
@@ -578,12 +504,11 @@
               "RelativeToolTip": "truyenthongso\\Models\\Tag_Post.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-17T02:41:15.04Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-17T02:41:15.04Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 26,
               "Title": "CategoryDTO.cs",
               "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\ViewModel\\CategoryDTO.cs",
               "RelativeDocumentMoniker": "truyenthongso\\ViewModel\\CategoryDTO.cs",
@@ -591,12 +516,11 @@
               "RelativeToolTip": "truyenthongso\\ViewModel\\CategoryDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-17T02:41:15.04Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-17T02:41:15.04Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 27,
               "Title": "UserService.cs",
               "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Service\\UserService.cs",
               "RelativeDocumentMoniker": "truyenthongso\\Service\\UserService.cs",
@@ -604,12 +528,11 @@
               "RelativeToolTip": "truyenthongso\\Service\\UserService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-17T02:41:15.04Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-17T02:41:15.04Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 29,
               "Title": "IPageList.cs",
               "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Common\\IPageList.cs",
               "RelativeDocumentMoniker": "truyenthongso\\Common\\IPageList.cs",
@@ -617,12 +540,11 @@
               "RelativeToolTip": "truyenthongso\\Common\\IPageList.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-17T02:41:15.049Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-17T02:41:15.049Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 28,
               "Title": "PageList.cs",
               "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Common\\PageList.cs",
               "RelativeDocumentMoniker": "truyenthongso\\Common\\PageList.cs",
@@ -630,12 +552,11 @@
               "RelativeToolTip": "truyenthongso\\Common\\PageList.cs",
               "ViewState": "AgIAAGMAAAAAAAAAAAAiwGoAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-17T02:41:15.052Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-17T02:41:15.052Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 30,
               "Title": "UserController.cs",
               "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Controllers\\UserController.cs",
               "RelativeDocumentMoniker": "truyenthongso\\Controllers\\UserController.cs",
@@ -643,12 +564,11 @@
               "RelativeToolTip": "truyenthongso\\Controllers\\UserController.cs",
               "ViewState": "AgIAADIAAAAAAAAAAAAswD4AAABNAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-17T02:41:15.052Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-17T02:41:15.052Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 47,
+              "DocumentIndex": 44,
               "Title": "20250607054801_dbupdate.cs",
               "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Migrations\\20250607054801_dbupdate.cs",
               "RelativeDocumentMoniker": "truyenthongso\\Migrations\\20250607054801_dbupdate.cs",
@@ -656,12 +576,11 @@
               "RelativeToolTip": "truyenthongso\\Migrations\\20250607054801_dbupdate.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-17T02:41:15.052Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-17T02:41:15.052Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 32,
               "Title": "UserMapper.cs",
               "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Mapper\\UserMapper.cs",
               "RelativeDocumentMoniker": "truyenthongso\\Mapper\\UserMapper.cs",
@@ -669,12 +588,11 @@
               "RelativeToolTip": "truyenthongso\\Mapper\\UserMapper.cs",
               "ViewState": "AgIAAAoAAAAAAAAAAAAQwAsAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-17T02:41:15.052Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-17T02:41:15.052Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 31,
               "Title": "ActionUser.cs",
               "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\ViewModel\\ActionUser.cs",
               "RelativeDocumentMoniker": "truyenthongso\\ViewModel\\ActionUser.cs",
@@ -682,12 +600,11 @@
               "RelativeToolTip": "truyenthongso\\ViewModel\\ActionUser.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-17T02:41:15.052Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-17T02:41:15.052Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 34,
               "Title": "RoleMapper.cs",
               "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Mapper\\RoleMapper.cs",
               "RelativeDocumentMoniker": "truyenthongso\\Mapper\\RoleMapper.cs",
@@ -695,12 +612,11 @@
               "RelativeToolTip": "truyenthongso\\Mapper\\RoleMapper.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-17T02:41:15.06Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-17T02:41:15.06Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 33,
               "Title": "IRoleService.cs",
               "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Service\\IRoleService.cs",
               "RelativeDocumentMoniker": "truyenthongso\\Service\\IRoleService.cs",
@@ -708,12 +624,11 @@
               "RelativeToolTip": "truyenthongso\\Service\\IRoleService.cs",
               "ViewState": "AgIAAAUAAAAAAAAAAAAxwAgAAABEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-17T02:41:15.06Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-17T02:41:15.06Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 35,
               "Title": "RoleDTo.cs",
               "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\ViewModel\\RoleDTo.cs",
               "RelativeDocumentMoniker": "truyenthongso\\ViewModel\\RoleDTo.cs",
@@ -721,12 +636,11 @@
               "RelativeToolTip": "truyenthongso\\ViewModel\\RoleDTo.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-17T02:41:15.06Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-17T02:41:15.06Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 46,
+              "DocumentIndex": 43,
               "Title": "20250602012957_updatedb.cs",
               "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Migrations\\20250602012957_updatedb.cs",
               "RelativeDocumentMoniker": "truyenthongso\\Migrations\\20250602012957_updatedb.cs",
@@ -734,12 +648,11 @@
               "RelativeToolTip": "truyenthongso\\Migrations\\20250602012957_updatedb.cs",
               "ViewState": "AgIAAFUAAAAAAAAAAAAQwGUAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-17T02:41:15.06Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-17T02:41:15.06Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 36,
               "Title": "IGroupService.cs",
               "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Service\\IGroupService.cs",
               "RelativeDocumentMoniker": "truyenthongso\\Service\\IGroupService.cs",
@@ -747,12 +660,11 @@
               "RelativeToolTip": "truyenthongso\\Service\\IGroupService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-17T02:41:15.06Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-17T02:41:15.06Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 37,
               "Title": "KiemTraBase64.cs",
               "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Clouds\\KiemTraBase64.cs",
               "RelativeDocumentMoniker": "truyenthongso\\Clouds\\KiemTraBase64.cs",
@@ -760,12 +672,11 @@
               "RelativeToolTip": "truyenthongso\\Clouds\\KiemTraBase64.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-17T02:41:15.06Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-17T02:41:15.06Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 38,
               "Title": "KiemTraDinhDangBase64.cs",
               "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Clouds\\KiemTraDinhDangBase64.cs",
               "RelativeDocumentMoniker": "truyenthongso\\Clouds\\KiemTraDinhDangBase64.cs",
@@ -773,12 +684,11 @@
               "RelativeToolTip": "truyenthongso\\Clouds\\KiemTraDinhDangBase64.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-17T02:41:15.07Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-17T02:41:15.07Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 39,
               "Title": "ChuyenFile.cs",
               "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Clouds\\ChuyenFile.cs",
               "RelativeDocumentMoniker": "truyenthongso\\Clouds\\ChuyenFile.cs",
@@ -786,12 +696,11 @@
               "RelativeToolTip": "truyenthongso\\Clouds\\ChuyenFile.cs",
               "ViewState": "AgIAAAcAAAAAAAAAAAAkwA0AAAA8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-17T02:41:15.07Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-17T02:41:15.07Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 40,
               "Title": "GroupDTO.cs",
               "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\ViewModel\\GroupDTO.cs",
               "RelativeDocumentMoniker": "truyenthongso\\ViewModel\\GroupDTO.cs",
@@ -799,12 +708,11 @@
               "RelativeToolTip": "truyenthongso\\ViewModel\\GroupDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-17T02:41:15.07Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-17T02:41:15.07Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 42,
               "Title": "20250525152935_dbs.cs",
               "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Migrations\\20250525152935_dbs.cs",
               "RelativeDocumentMoniker": "truyenthongso\\Migrations\\20250525152935_dbs.cs",
@@ -812,12 +720,11 @@
               "RelativeToolTip": "truyenthongso\\Migrations\\20250525152935_dbs.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAABLAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-17T02:41:15.07Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-17T02:41:15.07Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 41,
               "Title": "Group_Role.cs",
               "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Models\\Group_Role.cs",
               "RelativeDocumentMoniker": "truyenthongso\\Models\\Group_Role.cs",
@@ -825,8 +732,7 @@
               "RelativeToolTip": "truyenthongso\\Models\\Group_Role.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-17T02:41:15.07Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-17T02:41:15.07Z"
             }
           ]
         }

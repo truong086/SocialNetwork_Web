@@ -98,10 +98,52 @@ namespace truyenthongso.Common
 
             if(DateTime.TryParse(timestampStr, out var timestamp))
             {
-                return (DateTime.UtcNow - timestamp).TotalMinutes > 30; // Cachr 30 phút
+                return (DateTime.UtcNow - timestamp).TotalMinutes > 30; // Cache 30 phút
             }
 
             return true;
+        }
+        
+        // Hàm này dùng để lấy nhiều Field trong Redis, mỗi field sẽ chứa JSON string, sau đó Convert JSON sang object kiểu T rồi trả về List<T>
+        public async Task<List<T>> HashGetManyAsync<T> (string key, IEnumerable<string> fields)
+        {
+            // Danh sách các field trong Redis Hash (kiểu string)
+            /* Ví dụ: fields = ["user:1", "user:2", "user:3"]
+             redisFields = [RedisValue("user:1"), RedisValue("user:2"), ...], Redis dùng kiểu RedisValue nên cần convert */
+            var redisFields = fields.Select(x => (RedisValue)x).ToArray();
+
+            // Lấy dữ liệu từ Redis, "HashGetAsync" là lấy nhiều Field cùng lúc từ Redis Hash
+            var values = await _db.HashGetAsync(key, redisFields);
+
+            return values
+                .Where(v => v.HasValue) // Lọc Field có dữ liệu
+                .Select(v => JsonSerializer.Deserialize<T>(v)) // Convert Json sang Object, mỗi "v" là JSON string, Convert thành Object T, ví dụ: "{ \"id\": 1, \"name\": \"A\" }" ==> User { Id = 1, Name = "A" }
+                .ToList();
+        }
+
+        public async Task SortedSetAddManyAsync(string key, List<(string member, double score)> values)
+        {
+            var entries = values.Select(x => new SortedSetEntry(x.member, x.score)).ToArray();
+            await _db.SortedSetAddAsync(key, entries);
+        }
+
+        public async Task HashSetManyAsync(string key, List<(string field, string value)> values)
+        {
+            var entries = values.Select(x => new HashEntry(x.field, x.value)).ToArray();
+            await _db.HashSetAsync(key, entries);
+        }
+
+        public async Task<List<string>> SortedSetRangeByScoreAsync(string key, long skip = 0, long take = 20, Order order = Order.Descending)
+        {
+            var values = await _db.SortedSetRangeByRankAsync(
+                    key,
+                    skip,
+                    skip + take - 1,
+                    order
+                );
+
+            return values.Select(x => x.ToString())
+                .ToList();
         }
     }
 }
