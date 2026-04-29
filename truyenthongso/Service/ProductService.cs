@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
 using StackExchange.Redis;
 using truyenthongso.Clouds;
@@ -51,17 +53,35 @@ namespace truyenthongso.Service
 
                 var dataUserTagPost = FormatTagUser.FomatData(mapData.Description == null || mapData.Description == "" ? "" : mapData.Description);
 
-                if(productDTO.images != null && productDTO.images.Count > 0)
+                var dataNew = _context.posts.OrderByDescending(x => x.id).FirstOrDefault();
+                if (dataNew == null)
+                    return await Task.FromResult(PayLoad<ProductDTO>.CreatedFail(Status.DATANULL));
+
+                if(productDTO.tagId != null && productDTO.tagId.Count > 0)
                 {
-                    var postNew = _context.posts.OrderByDescending(x => x.id).FirstOrDefault();
+                    var checkIdTag = _context.tags.Where(x => productDTO.tagId.Contains(x.id) && !x.deleted).ToList();
+
+                    var listTagAdd = checkIdTag.Select(x => new Tag_Post
+                    {
+                        post = dataNew,
+                        Post_id = dataNew.id,
+                        Tag_id = x.id,
+                        tag = x
+                    }).ToList();
+
+                    _context.tagPosts.AddRange(listTagAdd);
+                    
+                }
+                if (productDTO.images != null && productDTO.images.Count > 0)
+                {
                     var listImage = new List<Post_Image>();
                     foreach (var image in productDTO.images)
                     {
-                        uploadCloud.CloudInaryIFromAccount(image, checkUser.FullName + "" + postNew.id, _cloud);
+                        uploadCloud.CloudInaryIFromAccount(image, checkUser.FullName + "" + dataNew.id, _cloud);
                         var newDataImage = new Post_Image()
                         {
-                            post = postNew,
-                            Post_id = postNew.id,
+                            post = dataNew,
+                            Post_id = dataNew.id,
                             PublicId = uploadCloud.publicId,
                             Url = uploadCloud.Link
                         };
@@ -69,16 +89,12 @@ namespace truyenthongso.Service
                     }
 
                     _context.postImages.AddRange(listImage);
-                    _context.SaveChanges();
+                    //_context.SaveChanges();
 
                 }
 
                 if(dataUserTagPost != null && dataUserTagPost.Count > 0)
                 {
-                    var dataNew = _context.posts.OrderByDescending(x => x.id).FirstOrDefault();
-                    if (dataNew == null)
-                        return await Task.FromResult(PayLoad<ProductDTO>.CreatedFail(Status.DATANULL));
-
                     // Truy vấn lấy ra tất cả User có id trong "dataUserTagPost"
                     var userTagged = _context.users.Where(x => dataUserTagPost.Contains(x.id)).ToList();
 
@@ -92,9 +108,11 @@ namespace truyenthongso.Service
                     if (listUserData.Any())
                     {
                         _context.postUserTags.AddRange(listUserData);
-                        _context.SaveChanges();
+                        //_context.SaveChanges();
                     }
                 }
+
+                await _context.SaveChangesAsync();
 
                 return await Task.FromResult(PayLoad<ProductDTO>.Successfully(productDTO));
             }
@@ -111,11 +129,12 @@ namespace truyenthongso.Service
                 var user = _userNameService.name();
                 var checkAccount = _context.users.FirstOrDefault(x => x.id == Convert.ToInt32(user) && !x.deleted && x.Action);
                 var checkPost = _context.posts.FirstOrDefault(x => x.id == likeDTO.Post_id && !x.deleted);
-                if (checkAccount == null || checkPost == null)
+                var checkIcon = _context.icons.FirstOrDefault(x => x.id == likeDTO.id_icon && x.url == likeDTO.url_icon && !x.deleted);
+                if (checkAccount == null || checkPost == null || checkIcon == null)
                     return await Task.FromResult(PayLoad<LikeDTO>.CreatedFail(Status.DATANULL));
 
                 var checKLike = _context.likes.FirstOrDefault(x => x.User_id == int.Parse(user) && x.Post_id == likeDTO.Post_id && !x.deleted);
-                if(checKLike == null)
+                if (checKLike == null)
                 {
                     _context.likes.Add(new Like
                     {
@@ -123,17 +142,28 @@ namespace truyenthongso.Service
                         Post_id = checkPost.id,
                         user = checkAccount,
                         User_id = checkAccount.id,
-                        status = 1
+                        status = 1,
+                        icon = checkIcon,
+                        url_icon = likeDTO.url_icon
                     });
-                    _cache.SetAdd(ConvertCacheKey.GetCacheKey(int.Parse(user)), likeDTO.Post_id);
+                    await _cache.SetAddAsync(ConvertCacheKey.GetCacheKey(int.Parse(user)), likeDTO.Post_id);
                 }
                 else
                 {
-                    checKLike.deleted = true;
-                    _cache.SetRemove(ConvertCacheKey.GetCacheKey(int.Parse(user)), likeDTO.Post_id);
+                    if (likeDTO.status == 1)
+                    {
+                        checKLike.deleted = true;
+                        await _cache.SetRemoveAsync(ConvertCacheKey.GetCacheKey(int.Parse(user)), likeDTO.Post_id);
+                    }
+                    else if (likeDTO.status == 2)
+                    {
+                        checKLike.icon = checkIcon;
+                        checKLike.url_icon = checkIcon.url;
+                    }
+                    
+                    
                 }
-
-                _context.SaveChanges();
+                await _context.SaveChangesAsync();
 
                 return await Task.FromResult(PayLoad<LikeDTO>.Successfully(likeDTO));
             }
@@ -172,19 +202,97 @@ namespace truyenthongso.Service
         {
             try
             {
-                var data = _context.posts.Where(x => !x.deleted).ToList();
-                if (!string.IsNullOrEmpty(name))
-                    data = data.Where(x => x.Title.Contains(name) && !x.deleted).ToList();
+                int userId = int.Parse(_userNameService.name());
 
-                var pageList = new PageList<object>(data, page - 1, pageSize);
+                var dateCheckOld = DateTimeOffset.Now.AddDays(-7);
+                var dateCheckNew = DateTimeOffset.Now.AddDays(7);
+                var checkUser = _context.users
+                    .FirstOrDefault(x => x.id == userId && !x.deleted);
+                if (checkUser == null) return await Task.FromResult(PayLoad<object>.CreatedFail(Status.DATANULL));
+
+                var key = ConvertCacheKey.GetCacheKey(userId);
+
+                var listPostId = _cache.SetMembers(key)
+                    .Select(x => (int)x)
+                    .ToHashSet();
+
+                var checkBehavioral = _context.behavioral_Analysess.Where(x => x.user_id == checkUser.id 
+                && x.total >= 0.6m 
+                && x.cretoredat >= dateCheckOld 
+                && x.cretoredat <= dateCheckNew)
+                    .ToList();
+
+                var ViewePosts = _context.articles_Viewedss.Where(x => x.user_id == checkUser.id).Select(x  => x.post_id).ToList();
+
+                var behaviorCategories = checkBehavioral.Select(x => x.category_id).ToList();
+
+                var dataAll = checkBehavioral == null || checkBehavioral.Count <= 0 ? _context.posts.AsNoTracking().OrderByDescending(x => x.cretoredat).Select(x => new PostResponse
+                {
+                    Id = x.id,
+                    Title = x.Title,
+                    Description = x.Description,
+                    Image = x.Post_Images.Select(i => i.Url),
+                    Like = x.Likes.Count(l => l.status == 1),
+                    Tym = x.Likes.Count(l => l.status == 2),
+                    Share = x.Sheres.Count(),
+                    Comment = x.Comments.Count() + x.Comments.SelectMany(c => c.CommentDescriptions).Count(),
+                    User = x.user.FullName,
+                    Tag = x.TagPosts.Where(xt => xt.Post_id == x.id).Select(xt => new tagPostData
+                    {
+                        Id = xt.Tag_id.Value,
+                        name = xt.tag == null ? "" : xt.tag.Name
+                    }).ToList(),
+                    UserId = x.user.id,
+                    category_id = x.Category_id.Value,
+                    category_name = x.category.Name,
+                    UserImage = x.user.Image,
+                    url_icon = x.Likes.Where(l => l.User_id == userId && !l.deleted).Select(l => l.url_icon).FirstOrDefault(),
+                    //isLike = x.Likes.FirstOrDefault(xl => xl.Post_id == x.id && xl.User_id == userId) != null ? true : false,
+                    //isLike = x.Likes.Any(xl => xl.Post_id == x.id && xl.User_id == userId && !xl.deleted),
+                    isLike = listPostId.Contains(x.id),
+                    Date = x.cretoredat,
+                    deleted = x.deleted
+                }).Where(x => !x.deleted && x.isLike == false).ToList()
+                :
+                _context.posts.AsNoTracking().OrderByDescending(x => x.cretoredat).Select(x => new PostResponse
+                {
+                    Id = x.id,
+                    Title = x.Title,
+                    Description = x.Description,
+                    Image = x.Post_Images.Select(i => i.Url),
+                    Like = x.Likes.Count(l => !x.deleted),
+                    Tym = x.Likes.Count(l => l.status == 2 && !x.deleted),
+                    Share = x.Sheres.Count(),
+                    Comment = x.Comments.Count() + x.Comments.SelectMany(c => c.CommentDescriptions).Count(),
+                    User = x.user.FullName,
+                    Tag = x.TagPosts.Where(xt => xt.Post_id == x.id).Select(xt => new tagPostData
+                    {
+                        Id = xt.Tag_id.Value,
+                        name = xt.tag == null ? "" : xt.tag.Name
+                    }).ToList(),
+                    UserId = x.user.id,
+                    category_id = x.Category_id ?? 0,
+                    category_name = x.category.Name,
+                    UserImage = x.user.Image,
+                    url_icon = x.Likes.Where(l => l.User_id == userId && !l.deleted).Select(l => l.url_icon).FirstOrDefault(),
+                    //isLike = x.Likes.FirstOrDefault(xl => xl.Post_id == x.id && xl.User_id == userId) != null ? true : false,
+                    //isLike = x.Likes.Any(xl => xl.Post_id == x.id && xl.User_id == userId && !xl.deleted),
+                    isLike = listPostId.Contains(x.id),
+                    Date = x.cretoredat,
+                    deleted = x.deleted
+                }).Where(x => !x.deleted && x.isLike == false && behaviorCategories.Contains(x.category_id)).ToList();
+
+                var pageList = new PageList<object>(dataAll, page - 1, pageSize);
+
+                pageList.Take(5).ToList();
 
                 return await Task.FromResult(PayLoad<object>.Successfully(new
                 {
                     data = pageList,
                     page,
                     pageList.pageSize,
-                    pageList.totalCounts,
-                    pageList.totalPages
+                    pageList.totalPages,
+                    pageList.totalCounts
                 }));
             }catch(Exception ex)
             {
@@ -287,46 +395,189 @@ namespace truyenthongso.Service
             }
         }
 
+        //public async Task<PayLoad<object>> FindAllAI(string? name, int category, int page = 1, int pageSize = 20)
+        //{
+        //    try
+        //    {
+
+        //        var user = _userNameService.name();
+
+        //        var data = category > 0 ? await _aIService.GetAi(new AIInput
+        //        {
+        //            UserId = int.Parse(user),
+        //            CategoryId = category,
+        //            TimeOnPage = 1,
+        //            ScrolledToBottom = false,
+        //            Liked = false,
+        //            TimeOfDay = 1,
+        //            Device = "Mobile"
+        //        }) : 0;
+
+        //        var dataMap = DataPosst(category, data, int.Parse(user));
+
+        //        if (!string.IsNullOrEmpty(name))
+        //            dataMap = dataMap.searchData(name, x => x.Title, x => x.Description);
+
+        //        var pageList = new PageList<object>(dataMap, page - 1, pageSize);
+
+        //        return await Task.FromResult(PayLoad<object>.Successfully(new
+        //        {
+        //            data = pageList,
+        //            page,
+        //            pageList.pageSize,
+        //            pageList.totalCounts,
+        //            pageList.totalPages
+        //        }));
+        //    }
+        //    catch(Exception ex)
+        //    {
+        //        return await Task.FromResult(PayLoad<object>.CreatedFail(ex.Message));
+        //    }
+        //}
         public async Task<PayLoad<object>> FindAllAI(string? name, int category, int page = 1, int pageSize = 20)
         {
             try
             {
-                var user = _userNameService.name();
-
-                var data = await _aIService.GetAi(new AIInput
+                if(int.TryParse(_userNameService.name(), out int n))
                 {
-                    UserId = int.Parse(user),
-                    CategoryId = category,
-                    TimeOnPage = 155,
-                    ScrolledToBottom = true,
-                    Liked = true,
-                    TimeOfDay = 20,
-                    Device = "Mobile"
-                });
+                    var checkUser = _context.users.FirstOrDefault(x => x.id == n && !x.deleted);
+                    if (checkUser == null) return await Task.FromResult(PayLoad<object>.CreatedFail(Status.DATANULL));
 
-                var dataMap = DataPosst(category, data);
-                if (!string.IsNullOrEmpty(name))
-                    dataMap = dataMap.Where(x => x.Title.Contains(name)).ToList();
+                    var keyCache = ConvertCacheKey.GetCacheKey(n);
+                    // Lấy toàn bộ set 1 lần
+                    var likePostDataId = _cache.SetMembers(keyCache)
+                        .Select(x => (int)x)
+                        .ToHashSet();
 
-                var pageList = new PageList<object>(dataMap, page - 1, pageSize);
+                    var dataAi = _context.behavioral_Analysess.Where(x => x.user_id == checkUser.id && !x.deleted)
+                        .GroupBy(x => x.category_id)
+                        .Select(x => new
+                        {
+                            id_category = x.Key, // "x.key" là id của "category_id" vì ở trên đã GroupBy theo trường dữ liệu "category_id" nên key ở đây sẽ là "category_id"
+                            //id_category = x.First().category_id,
+                            //id = x.Select(x => x.id),
+                            maxTotal = x.Max(g => g.total)
+                        }).OrderByDescending(x => x.maxTotal)
+                        .Take(5)
+                        .ToList();
 
-                return await Task.FromResult(PayLoad<object>.Successfully(new
-                {
-                    data = pageList,
-                    page,
-                    pageList.pageSize,
-                    pageList.totalCounts,
-                    pageList.totalPages
-                }));
+                    var checkPostUserView = _context.articles_Viewedss.Where(x => x.user_id == n && !x.deleted).Select(x => x.post_id).ToList();
+
+                    var categoryIds = dataAi.Select(x => x.id_category).ToList();
+
+                    var dataPost = _context.posts.AsNoTracking().Where(x => dataAi.Count <= 5 ? !x.deleted : (categoryIds.Contains(x.Category_id) && !checkPostUserView.Contains(x.id) && !x.deleted)).Select(x => new PostResponse
+                    {
+                        Id = x.id,
+                        Title = x.Title,
+                        Description = x.Description,
+                        Image = x.Post_Images.Select(i => i.Url),
+                        Like = x.Likes.Count(l => !l.deleted),
+                        Tym = x.Likes.Count(l => l.status == 2),
+                        Share = x.Sheres.Count(),
+                        Comment = x.Comments.Count() + x.Comments.SelectMany(c => c.CommentDescriptions).Count(),
+                        User = x.user.FullName,
+                        Tag = x.TagPosts.Select(xt => new tagPostData
+                        {
+                            Id = xt.Tag_id.Value,
+                            name = xt.tag == null ? "" : xt.tag.Name
+                        }).ToList(),
+                        UserId = x.user.id,
+                        category_id = x.Category_id.Value,
+                        category_name = x.category.Name,
+                        UserImage = x.user.Image,
+                        url_icon = x.Likes.Where(l => l.User_id == n && !l.deleted).Select(l => l.url_icon).FirstOrDefault(),
+                        //isLike = x.Likes.FirstOrDefault(xl => xl.Post_id == x.id && xl.User_id == userId) != null ? true : false,
+                        //isLike = x.Likes.Any(xl => xl.Post_id == x.id && xl.User_id == n && !xl.deleted),
+                        isLike = likePostDataId.Contains(x.id),
+                        Date = x.cretoredat
+                    }).Select(x => new PostResponse
+                    {
+                        Id = x.Id,
+                        Title = x.Title,
+                        Description = x.Description,
+                        Image = x.Image,
+                        Like = x.Like,
+                        Tym = x.Tym,
+                        Share = x.Share,
+                        Comment = x.Comment,
+                        User = x.User,
+                        Tag = x.Tag,
+                        UserId = x.UserId,
+                        category_id = x.category_id,
+                        category_name = x.category_name,
+                        UserImage = x.UserImage,
+                        url_icon = x.url_icon,
+                        //isLike = x.Likes.FirstOrDefault(xl => xl.Post_id == x.id && xl.User_id == userId) != null ? true : false,
+                        isLike = x.isLike,
+                        Date = x.Date
+                    }).ToList();
+
+                    if (!string.IsNullOrEmpty(name))
+                        dataPost = dataPost.Where(x => x.Title.Contains(name) || x.Description.Contains(name)).ToList();
+
+
+                    var pageList = new PageList<object>(dataPost, page - 1, pageSize);
+
+                    return PayLoad<object>.Successfully(new
+                    {
+                        data = pageList,
+                        page,
+                        pageList.pageSize,
+                        pageList.totalPages,
+                        pageList.totalCounts
+                    });
+                    //var categoryData = _context.categories.Where(x => categoryIds.Contains(x.id) && !x.deleted).ToDictionary(x => x.id);
+
+                    //var userData = _context.users.Where(x => x.id == checkUser.id && !x.deleted).Select(x => x.UserName).FirstOrDefault();
+
+                    //var allData = dataAi.Select(x => new
+                    //{
+                    //    x.id_category,
+                    //    x.maxTotal,
+                    //    category_name = categoryData.ContainsKey(x.id_category.Value) ? categoryData[x.id_category.Value].Name : "No Data",
+                    //    userName = userData
+                    //}).ToList();
+                }
+
+                return PayLoad<object>.CreatedFail(Status.DATANULL);
             }
-            catch(Exception ex)
+            catch (Exception ex) 
             {
                 return await Task.FromResult(PayLoad<object>.CreatedFail(ex.Message));
             }
         }
 
-        private List<PostResponse> DataPosst(int category, float number)
+        private List<PostResponse> DataPosst(int category, float number, int userId)
         {
+            if (category == 0)
+            {
+                var  dataAll = _context.posts.Where(x => !x.deleted).OrderByDescending(x => x.cretoredat).Select(x => new PostResponse
+                {
+                    Id = x.id,
+                    Title = x.Title,
+                    Description = x.Description,
+                    Image = x.Post_Images.Select(i => i.Url),
+                    Like = x.Likes.Count(l => l.status == 1),
+                    Tym = x.Likes.Count(l => l.status == 2),
+                    Share = x.Sheres.Count(),
+                    Comment = x.Comments.Count() + x.Comments.SelectMany(c => c.CommentDescriptions).Count(),
+                    User = x.user.FullName,
+                    Tag = x.TagPosts.Where(xt => xt.Post_id == x.id).Select(xt => new tagPostData
+                    {
+                        Id = xt.Tag_id.Value,
+                        name = xt.tag == null ? "" : xt.tag.Name
+                    }).ToList(),
+                    UserId = x.user.id,
+                    category_id = x.Category_id.Value,
+                    category_name = x.category.Name,
+                    UserImage = x.user.Image,
+                    //isLike = x.Likes.FirstOrDefault(xl => xl.Post_id == x.id && xl.User_id == userId) != null ? true : false,
+                    isLike = x.Likes.Any(xl => xl.Post_id == x.id && xl.User_id == userId),
+                    Date = x.cretoredat
+                }).ToList();
+
+                return dataAll;
+            }
             var data = number > 0.85 ? _context.posts.Where(x => x.Category_id == category && !x.deleted).Select(x => new PostResponse
                                                 {
                                                     Id = x.id,
@@ -336,10 +587,19 @@ namespace truyenthongso.Service
                                                     Like = x.Likes.Count(l => l.status == 1),
                                                     Tym = x.Likes.Count(l => l.status == 2),
                                                     Share = x.Sheres.Count(),
-                                                    Comment = x.Comments.Count() + x.Comments.Sum(c => c.CommentDescriptions.Count),
+                                                    Comment = x.Comments.Count() + x.Comments.SelectMany(c => c.CommentDescriptions).Count(),
                                                     User = x.user.FullName,
+                                                    Tag = x.TagPosts.Where(xt => xt.Post_id == x.id).Select(xt => new tagPostData
+                                                    {
+                                                        Id = xt.Tag_id.Value,
+                                                        name = xt.tag == null ? "" : xt.tag.Name
+                                                    }).ToList(),
                                                     UserId = x.user.id,
+                                                    category_id = x.Category_id.Value,
+                                                    category_name = x.category.Name,
                                                     UserImage = x.user.Image,
+                                                    //isLike = x.Likes.FirstOrDefault(xl => xl.Post_id == x.id && xl.User_id == userId) != null ? true : false,
+                                                    isLike = x.Likes.Any(xl => xl.Post_id == x.id && xl.User_id == userId),
                                                     Date = x.cretoredat
                                                 }).ToList()
                                      : _context.posts.Where(x => x.Category_id != category && !x.deleted).Select(x => new PostResponse
@@ -351,10 +611,19 @@ namespace truyenthongso.Service
                                          Like = x.Likes.Count(l => l.status == 1),
                                          Tym = x.Likes.Count(l => l.status == 2),
                                          Share = x.Sheres.Count(),
-                                         Comment = x.Comments.Count() + x.Comments.Sum(c => c.CommentDescriptions.Count),
+                                         Comment = x.Comments.Count() + x.Comments.SelectMany(c => c.CommentDescriptions).Count(),
+                                         Tag = x.TagPosts.Where(xt => xt.Post_id == x.id).Select(xt => new tagPostData
+                                         {
+                                             Id = xt.Tag_id.Value,
+                                             name = xt.tag == null ? "" : xt.tag.Name
+                                         }).ToList(),
                                          User = x.user.FullName,
+                                         category_id = x.Category_id.Value,
+                                         category_name = x.category.Name,
                                          UserId = x.user.id,
                                          UserImage = x.user.Image,
+                                         //isLike = x.Likes.FirstOrDefault(xl => xl.Post_id == x.id && xl.User_id == userId) != null ? true : false,
+                                         isLike = x.Likes.Any(xl => xl.Post_id == x.id && x.User_id == userId),
                                          Date = x.cretoredat
                                      }).ToList();
 
@@ -512,5 +781,7 @@ namespace truyenthongso.Service
                 return await Task.FromResult(PayLoad<object>.CreatedFail(ex.Message));
             }
         }
+
+        
     }
 }

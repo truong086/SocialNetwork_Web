@@ -20,5 +20,6 @@ namespace truyenthongso.Models
         public ICollection<Comment>? Comments { get; set; }
         public ICollection<UserStoryView>? userStoryViews { get; set; }
         public ICollection<PostUserTag>? postUserTagss { get; set; }
+        public ICollection<Articles_Viewed>? articles_Vieweds { get; set; }
     }
 }

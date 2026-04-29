@@ -16,6 +16,7 @@ namespace truyenthongso.Models
         public string? Commune { get; set; }
         public string? District { get; set; }
         public string? City { get; set; }
+        public string? Nation { get; set; }
         public string? Address { get; set; }
         public int? Start { get; set; }
         public int? Complaints { get; set; }
@@ -36,5 +37,8 @@ namespace truyenthongso.Models
         public ICollection<Friendship>? Friendships2 { get; set; }
         public ICollection<UserStoryView>? userStoryViews { get; set; }
         public ICollection<PostUserTag>? postUserTagss { get; set; }
+        public ICollection<Articles_Viewed>? articles_Vieweds { get; set; }
+        public ICollection<Behavioral_Analysis>? behavioral_Analyses { get; set; }
+        public ICollection<Icon>? iconss { get; set; }
     }
 }

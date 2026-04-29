@@ -30,10 +30,47 @@ namespace truyenthongso.Models
         public DbSet<Friendship> friendships { get; set; }
         public DbSet<UserStoryView> userStoryViews { get; set; }
         public DbSet<PostUserTag> postUserTags { get; set; }
+        public DbSet<Citys> citys { get; set; }
+        public DbSet<Districts> districts { get; set; }
+        public DbSet<Communes> communes { get; set; }
+        public DbSet<Nation> nations { get; set; }
+        public DbSet<Articles_Viewed> articles_Viewedss { get; set; }
+        public DbSet<Behavioral_Analysis> behavioral_Analysess { get; set; }
+        public DbSet<Icon> icons { get; set; }
         #endregion
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Icon>()
+                .HasMany(p => p.likes)
+                .WithOne(l => l.icon)
+                .HasForeignKey(f => f.icon_id)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<Nation>()
+                .HasMany(p => p.citys)
+                .WithOne(o => o.nation)
+                .HasForeignKey(h => h.nation_id)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<Citys>()
+                .HasMany(p => p.districts)
+                .WithOne(o => o.citys)
+                .HasForeignKey(f => f.city_id)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<Citys>()
+                .HasMany(p => p.communes)
+                .WithOne(o => o.citys)
+                .HasForeignKey(f => f.city_id)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<Districts>()
+                .HasMany(p => p.communes)
+                .WithOne(o => o.districts)
+                .HasForeignKey(f => f.district_id)
+                .OnDelete(DeleteBehavior.Restrict);
+
             modelBuilder.Entity<User>()
                 .HasMany(p => p.Interests)
                 .WithOne(u => u.user)
@@ -118,6 +155,24 @@ namespace truyenthongso.Models
               .HasForeignKey(m => m.user_id)
               .OnDelete(DeleteBehavior.Restrict);
 
+            modelBuilder.Entity<User>()
+              .HasMany(p => p.articles_Vieweds)
+              .WithOne(u => u.user)
+              .HasForeignKey(m => m.user_id)
+              .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<User>()
+              .HasMany(p => p.behavioral_Analyses)
+              .WithOne(u => u.user)
+              .HasForeignKey(m => m.user_id)
+              .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<User>()
+              .HasMany(p => p.iconss)
+              .WithOne(u => u.user)
+              .HasForeignKey(m => m.user_id)
+              .OnDelete(DeleteBehavior.Restrict);
+
             modelBuilder.Entity<Role>()
                .HasMany(p => p.Group_Roles)
                .WithOne(u => u.role)
@@ -134,6 +189,12 @@ namespace truyenthongso.Models
               .HasMany(p => p.Posts)
               .WithOne(u => u.category)
               .HasForeignKey(m => m.Category_id)
+              .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<Category>()
+              .HasMany(p => p.behavioral_Analyses)
+              .WithOne(u => u.category)
+              .HasForeignKey(m => m.category_id)
               .OnDelete(DeleteBehavior.Restrict);
 
             modelBuilder.Entity<Comment>()
@@ -192,6 +253,12 @@ namespace truyenthongso.Models
 
             modelBuilder.Entity<Post>()
             .HasMany(p => p.userStoryViews)
+            .WithOne(u => u.post)
+            .HasForeignKey(m => m.post_id)
+            .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<Post>()
+            .HasMany(p => p.articles_Vieweds)
             .WithOne(u => u.post)
             .HasForeignKey(m => m.post_id)
             .OnDelete(DeleteBehavior.Restrict);

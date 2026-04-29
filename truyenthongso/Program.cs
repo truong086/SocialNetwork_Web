@@ -13,7 +13,9 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using truyenthongso.Clouds;
+using truyenthongso.Common;
 using truyenthongso.EmailConfig;
+using truyenthongso.FunctionAuto;
 using truyenthongso.Models;
 using truyenthongso.PythonAI;
 using truyenthongso.QuartzService;
@@ -69,8 +71,13 @@ builder.Services.AddHangfire(config =>
 
 builder.Services.AddHangfireServer();
 
-builder.Services.AddDbContext<DBContext>(options =>
-    options.UseOracle(builder.Configuration.GetConnectionString("MyDB")));
+var connection = builder.Configuration.GetConnectionString("MyDB");
+builder.Services.AddDbContext<DBContext>(option =>
+{
+    option.UseSqlServer(connection); // "ThuongMaiDienTu" đây là tên của project, vì tách riêng model khỏi project sang 1 lớp khác nên phải để câu lệnh này "b => b.MigrationsAssembly("ThuongMaiDienTu")"
+});
+//builder.Services.AddDbContext<DBContext>(options =>
+//    options.UseOracle(builder.Configuration.GetConnectionString("MyDB")));
 builder.Services.AddSwaggerGen(c =>
 {
     c.EnableAnnotations();
@@ -156,9 +163,21 @@ builder.Services.AddScoped<IUserNameService, UserNameService>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<IAIGentsService, AIGentsService>();
+builder.Services.AddScoped<ITagService, TagService>();
 builder.Services.AddScoped<IAIService, AIService>();
+builder.Services.AddScoped<ICityService, CityService>();
+builder.Services.AddScoped<INationService, NationService>();
+builder.Services.AddScoped<IDistrictsService, DistrictsService>();
+builder.Services.AddScoped<ICommunesService, CommunesService>();
+builder.Services.AddScoped<IArticles_ViewedService, Articles_ViewedService>();
+builder.Services.AddScoped<ITraningModelService, TraningModelService>();
+builder.Services.AddScoped<IIconService, IconService>();
+builder.Services.AddScoped<IRedisService, CacheFuncsService>();
+//builder.Services.AddScoped<TuDongMoiTuan>();
 builder.Services.AddScoped<SendEmais>();
 builder.Services.AddScoped<KiemTraBase64>();
+builder.Services.AddScoped<Utils>();
+builder.Services.AddScoped<VerificationTaskWorker>();
 builder.Services.AddControllers();
 builder.Services.AddAuthentication(); // nếu có
 builder.Services.AddAuthorization();

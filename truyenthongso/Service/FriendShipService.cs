@@ -5,7 +5,6 @@ using StackExchange.Redis;
 using System.Text.Json;
 using truyenthongso.Common;
 using truyenthongso.Models;
-using truyenthongso.PythonAI;
 using truyenthongso.ViewModel;
 
 namespace truyenthongso.Service

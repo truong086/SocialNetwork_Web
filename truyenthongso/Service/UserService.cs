@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.Extensions.Options;
 using Org.BouncyCastle.Asn1.Pkcs;
+using System;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using truyenthongso.Clouds;
@@ -21,8 +22,9 @@ namespace truyenthongso.Service
         private readonly SendEmais _emails;
         private readonly IHttpContextAccessor _httpContextAccessor;
         private readonly IUserNameService _userNameService;
+        private readonly VerificationTaskWorker _verificationTaskWorker;
         public UserService(DBContext context, IMapper mapper, IOptionsMonitor<Jwt> jwt, IOptions<Cloud> cloud,
-            SendEmais emails, IHttpContextAccessor httpContextAccessor, IUserNameService userNameService)
+            SendEmais emails, IHttpContextAccessor httpContextAccessor, IUserNameService userNameService, VerificationTaskWorker verificationTaskWorker)
         {
             _context = context;
             _mapper = mapper;
@@ -31,16 +33,19 @@ namespace truyenthongso.Service
             _emails = emails;
             _httpContextAccessor = httpContextAccessor;
             _userNameService = userNameService;
+            _verificationTaskWorker = verificationTaskWorker;
+
         }
         public async Task<PayLoad<UserDTO>> Add(UserDTO userDTO)
         {
             try
             {
+                if(userDTO.Age <= 0) return PayLoad<UserDTO>.CreatedFail("Age 0 ???");
                 var checkData = _context.users.FirstOrDefault(x => x.UserName == userDTO.UserName && !x.deleted && x.Email == userDTO.Email);
                 if(checkData != null)
                     return await Task.FromResult(PayLoad<UserDTO>.CreatedFail(Status.DATATONTAI));
 
-                var checkRole = _context.roles.FirstOrDefault(x => x.Url.ToLower() == Status.ADMIN.ToLower());
+                var checkRole = _context.roles.FirstOrDefault(x => x.Url.ToLower() == Status.USER.ToLower());
                 if (checkRole == null)
                     return await Task.FromResult(PayLoad<UserDTO>.CreatedFail(Status.DATANULL));
 
@@ -50,38 +55,47 @@ namespace truyenthongso.Service
                 dataMap.role_id = checkRole.id;
 
                 _context.users.Add(dataMap);
-               
 
-                var descriptionEmail = new SendEmail
-                {
-                    title = "Mã xác nhận tài khoản",
-                    message = "Thông tin xác nhận",
-                    name = dataMap.UserName,
-                    active = RanDomCode.geneAction(6) + dataMap.id.ToString()
-                };
-
-                var tokenOTP = new Token
-                {
-                    user = dataMap,
-                    userid = dataMap.id,
-                    token = descriptionEmail.active
-                };
-
-                _context.tokens.Add(tokenOTP);
                 _context.SaveChanges();
 
-                var tempalte = Status.TEMPLATEVIEW;
-
-                var tempalateEmail = await _emails.RenderViewToStringAsync(tempalte, descriptionEmail);
-                await _emails.SendEmai(dataMap.Email, descriptionEmail.title, tempalateEmail);
-
-                // Khởi động Background Task để xử lý
-                _ = Task.Run(async () =>
-                {
-                    var work = _httpContextAccessor.HttpContext.RequestServices.GetRequiredService<VerificationTaskWorker>();
-                    await work.RunOnceAsync(); // Chuyền dữ liệu vào hàm "VerificationTaskWorker" này
-                });
                 return await Task.FromResult(PayLoad<UserDTO>.Successfully(userDTO));
+                //var dataNew = _context.users.OrderByDescending(x => x.id).FirstOrDefault();
+
+                //var descriptionEmail = new SendEmail
+                //{
+                //    title = "Mã xác nhận tài khoản",
+                //    message = "Thông tin xác nhận",
+                //    name = dataNew.UserName,
+                //    active = RanDomCode.geneAction(4) + dataNew.id.ToString()
+                //};
+
+                //var tokenOTP = new Token
+                //{
+                //    user = dataNew,
+                //    userid = dataNew.id,
+                //    token = descriptionEmail.active
+                //};
+
+                //_context.tokens.Add(tokenOTP);
+
+                //if (await _context.SaveChangesAsync() > 0)
+                //{
+                //    var tempalte = Status.TEMPLATEVIEW;
+
+                //    var tempalateEmail = await _emails.RenderViewToStringAsync(tempalte, descriptionEmail);
+                //    await _emails.SendEmai(dataNew.Email, descriptionEmail.title, tempalateEmail);
+
+                //    // Khởi động Background Task để xử lý
+                //    _ = Task.Run(async () =>
+                //    {
+                //        //var work = _httpContextAccessor.HttpContext.RequestServices.GetRequiredService<VerificationTaskWorker>();
+                //        //await work.RunOnceAsync(); // Chuyền dữ liệu vào hàm "VerificationTaskWorker" này
+                //        await _verificationTaskWorker.RunOnceAsync(dataNew.id); // Chuyền dữ liệu vào hàm "VerificationTaskWorker" này
+                //    });
+                //    return await Task.FromResult(PayLoad<UserDTO>.Successfully(userDTO));
+                //}
+
+                //return PayLoad<UserDTO>.CreatedFail(Status.DATANULL);
             }
             catch(Exception ex)
             {
@@ -118,10 +132,13 @@ namespace truyenthongso.Service
                 {
                     x.id,
                     x.FullName,
+                    x.UserName,
                     x.Email,
                     x.Image,
                     x.Address,
-                    x.role.Url
+                    x.role.Url,
+                    x.Action,
+                    x.cretoredat
                 }).ToList();
 
                 var pageList = new PageList<object>(data, page - 1, pageSize);
@@ -190,23 +207,36 @@ namespace truyenthongso.Service
             }
         }
 
-        public async Task<PayLoad<string>> DeleteAccountNoAction()
+        public async Task<PayLoad<string>> DeleteAccountNoAction(int id = 0)
         {
             try
             {
-                var data = _context.users.Where(x => x.cretoredat > DateTimeOffset.UtcNow.AddMinutes(1) && !x.deleted && !x.Action).ToList();
-                var dataToken = _context.tokens.Where(x => x.cretoredat > DateTimeOffset.UtcNow.AddMinutes(1)).ToList();
-                if(data.Count > 0)
+                if(id > 0)
                 {
-                    _context.users.RemoveRange(data);
-                }
+                    var checkUser = _context.users.FirstOrDefault(x => x.id == id && !x.deleted && !x.Action);
+                    var checkToken = _context.tokens.Where(x => x.userid == id && !x.deleted).ToList();
 
-                if(dataToken.Count > 0)
+                    if(checkUser != null)
+                        _context.users.Remove(checkUser);
+                    if (checkToken.Count > 0)
+                        _context.tokens.RemoveRange(checkToken);
+                }
+                else
                 {
-                    _context.tokens.RemoveRange(dataToken);
-                    
-                }
+                    var time = DateTimeOffset.UtcNow.AddMinutes(-1).AddSeconds(-18);
+                    var data = _context.users.Where(x => x.cretoredat >= time && !x.deleted && !x.Action).ToList();
+                    var dataToken = _context.tokens.Where(x => x.cretoredat >= time).ToList();
+                    if (data.Count > 0)
+                    {
+                        _context.users.RemoveRange(data);
+                    }
 
+                    if (dataToken.Count > 0)
+                    {
+                        _context.tokens.RemoveRange(dataToken);
+
+                    }
+                }
                 _context.SaveChanges();
                 return await Task.FromResult(PayLoad<string>.Successfully(Status.SUCCESS));
             }catch(Exception ex)
@@ -219,22 +249,35 @@ namespace truyenthongso.Service
         {
             try
             {
-                var checkEmail = _context.users.FirstOrDefault(x => x.Email == email && !x.deleted && !x.Action);
+                var checkEmail = _context.users.OrderByDescending(x => x.id).FirstOrDefault(x => x.Email == email && !x.deleted && !x.Action);
                 if(checkEmail == null)
                     return await Task.FromResult(PayLoad<string>.CreatedFail(Status.DATANULL));
 
                 var checkToken = _context.tokens.Where(x => x.userid == checkEmail.id).ToList();
+                //if (checkToken.Count >= 1) return PayLoad<string>.CreatedFail("Đợi 1 phút !!!");
                 if(checkToken.Count > 0)
                 {
                     _context.tokens.RemoveRange(checkToken);
+                    _context.SaveChanges();
+                    return PayLoad<string>.CreatedFail("Đợi 1 phút !!!");
                 }
+
+                var otpCode = RanDomCode.geneAction(4) + checkEmail.id.ToString();
+                otpCode = otpCode.Length > 6
+                    ? otpCode.Substring(otpCode.Length - 6, 6) // Nếu chuỗi hiện tại lớn 6 ký tự thì chỉ lấy 6 ký tự từ dưới lên, dùng (otpCode.Length - 6, 6)
+                    : otpCode.PadRight(6, 's'); // Nếu chuỗi nhỏ hơn 6 ký tự thì sẽ thêm 1 ký tự vào lên phải của chuỗi, ở đây đang thêm ký tự "s"
+
+                //var myString = string.Empty;
+                //myString = myString = (myString ?? "")
+                //    .PadLeft(6, 'X') // Nếu chuỗi nhỏ hơn 6 ký tự thì sẽ thêm 1 ký tự vào lên trái của chuỗi, ở đây đang thêm ký tự "X"
+                //    .Substring(0, 6); // Nếu chuỗi hiện tại lớn 6 ký tự thì chỉ lấy 6 ký tự từ trên xuống, dùng (0, 6)
 
                 var descriptionEmail = new SendEmail
                 {
                     title = "Mã xác nhận tài khoản",
                     message = "Thông tin xác nhận",
                     name = checkEmail.UserName,
-                    active = RanDomCode.geneAction(6) + checkEmail.id.ToString()
+                    active = otpCode
                 };
 
 
@@ -256,8 +299,7 @@ namespace truyenthongso.Service
                 // Khởi động Background Task để xử lý
                 _ = Task.Run(async () =>
                 {
-                    var work = _httpContextAccessor.HttpContext.RequestServices.GetRequiredService<VerificationTaskWorker>();
-                    await work.RunOnceAsync(); // Chuyền dữ liệu vào hàm "VerificationTaskWorker" này
+                    await _verificationTaskWorker.RunOnceAsync(checkEmail.id); // Chuyền dữ liệu vào hàm "VerificationTaskWorker" này
                 });
 
                 return await Task.FromResult(PayLoad<string>.Successfully(Status.SUCCESS));
@@ -272,7 +314,7 @@ namespace truyenthongso.Service
         {
             try
             {
-                var checkEmail = _context.users.FirstOrDefault(x => x.Email == data.email && !x.deleted && !x.Action);
+                var checkEmail = _context.users.OrderByDescending(x => x.id).FirstOrDefault(x => x.Email == data.email && !x.deleted && !x.Action);
                 if(checkEmail == null)
                     return await Task.FromResult(PayLoad<string>.CreatedFail(Status.DATANULL));
 
@@ -315,7 +357,8 @@ namespace truyenthongso.Service
                     x.Password,
                     x.role.Url,
                     x.deleted,
-                    x.Action
+                    x.Action,
+                    x.Image
                 }).FirstOrDefault(x => x.UserName == userDTO.username && x.Password == hashPassword && !x.deleted && x.Action);
                 if(checkData == null)
                     return await Task.FromResult(PayLoad<object>.CreatedFail(Status.DATANULL));
@@ -331,7 +374,8 @@ namespace truyenthongso.Service
                     id = checkData.id,
                     username = checkData.UserName,
                     role = checkData.Url,
-                    Token = TokenLogin.GenerateToken(claims, _jwt)
+                    token = TokenLogin.GenerateToken(claims, _jwt),
+                    image = checkData.Image
                 }));
             }
             catch(Exception ex)

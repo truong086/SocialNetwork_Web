@@ -2,8 +2,8 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Oracle.EntityFrameworkCore.Metadata;
 using truyenthongso.Models;
 
 #nullable disable
@@ -20,70 +20,176 @@ namespace truyenthongso.Migrations
                 .HasAnnotation("ProductVersion", "6.0.20")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
-            OracleModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
+            SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
+
+            modelBuilder.Entity("truyenthongso.Models.Articles_Viewed", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
+
+                    b.Property<string>("creator")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTimeOffset?>("cretoredat")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<bool>("deleted")
+                        .HasColumnType("bit");
+
+                    b.Property<int?>("post_id")
+                        .HasColumnType("int");
+
+                    b.Property<DateTimeOffset?>("updateat")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<int?>("user_id")
+                        .HasColumnType("int");
+
+                    b.HasKey("id");
+
+                    b.HasIndex("post_id");
+
+                    b.HasIndex("user_id");
+
+                    b.ToTable("articles_Viewedss");
+                });
+
+            modelBuilder.Entity("truyenthongso.Models.Behavioral_Analysis", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
+
+                    b.Property<int?>("category_id")
+                        .HasColumnType("int");
+
+                    b.Property<string>("creator")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTimeOffset?>("cretoredat")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<bool>("deleted")
+                        .HasColumnType("bit");
+
+                    b.Property<decimal?>("total")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<DateTimeOffset?>("updateat")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<int?>("user_id")
+                        .HasColumnType("int");
+
+                    b.HasKey("id");
+
+                    b.HasIndex("category_id");
+
+                    b.HasIndex("user_id");
+
+                    b.ToTable("behavioral_Analysess");
+                });
 
             modelBuilder.Entity("truyenthongso.Models.Category", b =>
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("NUMBER(10)");
+                        .HasColumnType("int");
 
-                    OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
 
                     b.Property<string>("Name")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("creator")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTimeOffset?>("cretoredat")
-                        .HasColumnType("TIMESTAMP(7) WITH TIME ZONE");
+                        .HasColumnType("datetimeoffset");
 
                     b.Property<bool>("deleted")
-                        .HasColumnType("NUMBER(1)");
+                        .HasColumnType("bit");
 
                     b.Property<DateTimeOffset?>("updateat")
-                        .HasColumnType("TIMESTAMP(7) WITH TIME ZONE");
+                        .HasColumnType("datetimeoffset");
 
                     b.HasKey("id");
 
                     b.ToTable("categories");
                 });
 
+            modelBuilder.Entity("truyenthongso.Models.Citys", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
+
+                    b.Property<string>("creator")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTimeOffset?>("cretoredat")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<bool>("deleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("nation_id")
+                        .HasColumnType("int");
+
+                    b.Property<DateTimeOffset?>("updateat")
+                        .HasColumnType("datetimeoffset");
+
+                    b.HasKey("id");
+
+                    b.HasIndex("nation_id");
+
+                    b.ToTable("citys");
+                });
+
             modelBuilder.Entity("truyenthongso.Models.Comment", b =>
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("NUMBER(10)");
+                        .HasColumnType("int");
 
-                    OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
 
                     b.Property<string>("Description")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("Post_id")
-                        .HasColumnType("NUMBER(10)");
+                        .HasColumnType("int");
 
                     b.Property<string>("PublicId_id")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Url")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("User_id")
-                        .HasColumnType("NUMBER(10)");
+                        .HasColumnType("int");
 
                     b.Property<string>("creator")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTimeOffset?>("cretoredat")
-                        .HasColumnType("TIMESTAMP(7) WITH TIME ZONE");
+                        .HasColumnType("datetimeoffset");
 
                     b.Property<bool>("deleted")
-                        .HasColumnType("NUMBER(1)");
+                        .HasColumnType("bit");
 
                     b.Property<DateTimeOffset?>("updateat")
-                        .HasColumnType("TIMESTAMP(7) WITH TIME ZONE");
+                        .HasColumnType("datetimeoffset");
 
                     b.HasKey("id");
 
@@ -98,42 +204,42 @@ namespace truyenthongso.Migrations
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("NUMBER(10)");
+                        .HasColumnType("int");
 
-                    OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
 
                     b.Property<int?>("CommentDescript3_2")
-                        .HasColumnType("NUMBER(10)");
+                        .HasColumnType("int");
 
                     b.Property<int?>("CommentDescription_id")
-                        .HasColumnType("NUMBER(10)");
+                        .HasColumnType("int");
 
                     b.Property<int?>("Comment_id")
-                        .HasColumnType("NUMBER(10)");
+                        .HasColumnType("int");
 
                     b.Property<string>("PublicId")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Url")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("User_id")
-                        .HasColumnType("NUMBER(10)");
+                        .HasColumnType("int");
 
                     b.Property<string>("creator")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTimeOffset?>("cretoredat")
-                        .HasColumnType("TIMESTAMP(7) WITH TIME ZONE");
+                        .HasColumnType("datetimeoffset");
 
                     b.Property<bool>("deleted")
-                        .HasColumnType("NUMBER(1)");
+                        .HasColumnType("bit");
 
                     b.Property<string>("descript")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTimeOffset?>("updateat")
-                        .HasColumnType("TIMESTAMP(7) WITH TIME ZONE");
+                        .HasColumnType("datetimeoffset");
 
                     b.HasKey("id");
 
@@ -148,46 +254,84 @@ namespace truyenthongso.Migrations
                     b.ToTable("CommentDescription");
                 });
 
+            modelBuilder.Entity("truyenthongso.Models.Communes", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
+
+                    b.Property<int?>("city_id")
+                        .HasColumnType("int");
+
+                    b.Property<string>("creator")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTimeOffset?>("cretoredat")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<bool>("deleted")
+                        .HasColumnType("bit");
+
+                    b.Property<int?>("district_id")
+                        .HasColumnType("int");
+
+                    b.Property<string>("name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTimeOffset?>("updateat")
+                        .HasColumnType("datetimeoffset");
+
+                    b.HasKey("id");
+
+                    b.HasIndex("city_id");
+
+                    b.HasIndex("district_id");
+
+                    b.ToTable("communes");
+                });
+
             modelBuilder.Entity("truyenthongso.Models.Complaints", b =>
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("NUMBER(10)");
+                        .HasColumnType("int");
 
-                    OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
 
                     b.Property<bool?>("Action")
-                        .HasColumnType("NUMBER(1)");
+                        .HasColumnType("bit");
 
                     b.Property<int?>("Author")
-                        .HasColumnType("NUMBER(10)");
+                        .HasColumnType("int");
 
                     b.Property<string>("Description")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PublicId")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Title")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Url")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("User_id")
-                        .HasColumnType("NUMBER(10)");
+                        .HasColumnType("int");
 
                     b.Property<string>("creator")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTimeOffset?>("cretoredat")
-                        .HasColumnType("TIMESTAMP(7) WITH TIME ZONE");
+                        .HasColumnType("datetimeoffset");
 
                     b.Property<bool>("deleted")
-                        .HasColumnType("NUMBER(1)");
+                        .HasColumnType("bit");
 
                     b.Property<DateTimeOffset?>("updateat")
-                        .HasColumnType("TIMESTAMP(7) WITH TIME ZONE");
+                        .HasColumnType("datetimeoffset");
 
                     b.HasKey("id");
 
@@ -196,34 +340,67 @@ namespace truyenthongso.Migrations
                     b.ToTable("complaints");
                 });
 
+            modelBuilder.Entity("truyenthongso.Models.Districts", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
+
+                    b.Property<int?>("city_id")
+                        .HasColumnType("int");
+
+                    b.Property<string>("creator")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTimeOffset?>("cretoredat")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<bool>("deleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTimeOffset?>("updateat")
+                        .HasColumnType("datetimeoffset");
+
+                    b.HasKey("id");
+
+                    b.HasIndex("city_id");
+
+                    b.ToTable("districts");
+                });
+
             modelBuilder.Entity("truyenthongso.Models.Friendship", b =>
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("NUMBER(10)");
+                        .HasColumnType("int");
 
-                    OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
 
                     b.Property<int?>("UserId1")
-                        .HasColumnType("NUMBER(10)");
+                        .HasColumnType("int");
 
                     b.Property<int?>("UserId2")
-                        .HasColumnType("NUMBER(10)");
+                        .HasColumnType("int");
 
                     b.Property<string>("creator")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTimeOffset?>("cretoredat")
-                        .HasColumnType("TIMESTAMP(7) WITH TIME ZONE");
+                        .HasColumnType("datetimeoffset");
 
                     b.Property<bool>("deleted")
-                        .HasColumnType("NUMBER(1)");
+                        .HasColumnType("bit");
 
                     b.Property<int>("status")
-                        .HasColumnType("NUMBER(10)");
+                        .HasColumnType("int");
 
                     b.Property<DateTimeOffset?>("updateat")
-                        .HasColumnType("TIMESTAMP(7) WITH TIME ZONE");
+                        .HasColumnType("datetimeoffset");
 
                     b.HasKey("id");
 
@@ -238,24 +415,24 @@ namespace truyenthongso.Migrations
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("NUMBER(10)");
+                        .HasColumnType("int");
 
-                    OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
 
                     b.Property<string>("Name")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("creator")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTimeOffset?>("cretoredat")
-                        .HasColumnType("TIMESTAMP(7) WITH TIME ZONE");
+                        .HasColumnType("datetimeoffset");
 
                     b.Property<bool>("deleted")
-                        .HasColumnType("NUMBER(1)");
+                        .HasColumnType("bit");
 
                     b.Property<DateTimeOffset?>("updateat")
-                        .HasColumnType("TIMESTAMP(7) WITH TIME ZONE");
+                        .HasColumnType("datetimeoffset");
 
                     b.HasKey("id");
 
@@ -266,27 +443,27 @@ namespace truyenthongso.Migrations
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("NUMBER(10)");
+                        .HasColumnType("int");
 
-                    OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
 
                     b.Property<string>("creator")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTimeOffset?>("cretoredat")
-                        .HasColumnType("TIMESTAMP(7) WITH TIME ZONE");
+                        .HasColumnType("datetimeoffset");
 
                     b.Property<bool>("deleted")
-                        .HasColumnType("NUMBER(1)");
+                        .HasColumnType("bit");
 
                     b.Property<int?>("group_id")
-                        .HasColumnType("NUMBER(10)");
+                        .HasColumnType("int");
 
                     b.Property<int?>("role_id")
-                        .HasColumnType("NUMBER(10)");
+                        .HasColumnType("int");
 
                     b.Property<DateTimeOffset?>("updateat")
-                        .HasColumnType("TIMESTAMP(7) WITH TIME ZONE");
+                        .HasColumnType("datetimeoffset");
 
                     b.HasKey("id");
 
@@ -297,31 +474,67 @@ namespace truyenthongso.Migrations
                     b.ToTable("groupRoles");
                 });
 
+            modelBuilder.Entity("truyenthongso.Models.Icon", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
+
+                    b.Property<string>("creator")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTimeOffset?>("cretoredat")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<bool>("deleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTimeOffset?>("updateat")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("url")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("user_id")
+                        .HasColumnType("int");
+
+                    b.HasKey("id");
+
+                    b.HasIndex("user_id");
+
+                    b.ToTable("icons");
+                });
+
             modelBuilder.Entity("truyenthongso.Models.Interest", b =>
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("NUMBER(10)");
+                        .HasColumnType("int");
 
-                    OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
 
                     b.Property<string>("Name")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("User_id")
-                        .HasColumnType("NUMBER(10)");
+                        .HasColumnType("int");
 
                     b.Property<string>("creator")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTimeOffset?>("cretoredat")
-                        .HasColumnType("TIMESTAMP(7) WITH TIME ZONE");
+                        .HasColumnType("datetimeoffset");
 
                     b.Property<bool>("deleted")
-                        .HasColumnType("NUMBER(1)");
+                        .HasColumnType("bit");
 
                     b.Property<DateTimeOffset?>("updateat")
-                        .HasColumnType("TIMESTAMP(7) WITH TIME ZONE");
+                        .HasColumnType("datetimeoffset");
 
                     b.HasKey("id");
 
@@ -334,30 +547,36 @@ namespace truyenthongso.Migrations
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("NUMBER(10)");
+                        .HasColumnType("int");
 
-                    OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
 
                     b.Property<int?>("Post_id")
-                        .HasColumnType("NUMBER(10)");
+                        .HasColumnType("int");
 
                     b.Property<int?>("User_id")
-                        .HasColumnType("NUMBER(10)");
+                        .HasColumnType("int");
 
                     b.Property<string>("creator")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTimeOffset?>("cretoredat")
-                        .HasColumnType("TIMESTAMP(7) WITH TIME ZONE");
+                        .HasColumnType("datetimeoffset");
 
                     b.Property<bool>("deleted")
-                        .HasColumnType("NUMBER(1)");
+                        .HasColumnType("bit");
+
+                    b.Property<int?>("icon_id")
+                        .HasColumnType("int");
 
                     b.Property<int?>("status")
-                        .HasColumnType("NUMBER(10)");
+                        .HasColumnType("int");
 
                     b.Property<DateTimeOffset?>("updateat")
-                        .HasColumnType("TIMESTAMP(7) WITH TIME ZONE");
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("url_icon")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("id");
 
@@ -365,46 +584,76 @@ namespace truyenthongso.Migrations
 
                     b.HasIndex("User_id");
 
+                    b.HasIndex("icon_id");
+
                     b.ToTable("likes");
+                });
+
+            modelBuilder.Entity("truyenthongso.Models.Nation", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
+
+                    b.Property<string>("creator")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTimeOffset?>("cretoredat")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<bool>("deleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTimeOffset?>("updateat")
+                        .HasColumnType("datetimeoffset");
+
+                    b.HasKey("id");
+
+                    b.ToTable("nations");
                 });
 
             modelBuilder.Entity("truyenthongso.Models.NewspaperSource", b =>
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("NUMBER(10)");
+                        .HasColumnType("int");
 
-                    OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
 
                     b.Property<string>("Description")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("NewsSourceProvider_id")
-                        .HasColumnType("NUMBER(10)");
+                        .HasColumnType("int");
 
                     b.Property<int?>("NewspaperType_id")
-                        .HasColumnType("NUMBER(10)");
+                        .HasColumnType("int");
 
                     b.Property<bool?>("Status")
-                        .HasColumnType("NUMBER(1)");
+                        .HasColumnType("bit");
 
                     b.Property<string>("Url")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("creator")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTimeOffset?>("cretoredat")
-                        .HasColumnType("TIMESTAMP(7) WITH TIME ZONE");
+                        .HasColumnType("datetimeoffset");
 
                     b.Property<bool>("deleted")
-                        .HasColumnType("NUMBER(1)");
+                        .HasColumnType("bit");
 
                     b.Property<DateTimeOffset?>("updateat")
-                        .HasColumnType("TIMESTAMP(7) WITH TIME ZONE");
+                        .HasColumnType("datetimeoffset");
 
                     b.HasKey("id");
 
@@ -419,24 +668,24 @@ namespace truyenthongso.Migrations
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("NUMBER(10)");
+                        .HasColumnType("int");
 
-                    OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
 
                     b.Property<string>("Name")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("creator")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTimeOffset?>("cretoredat")
-                        .HasColumnType("TIMESTAMP(7) WITH TIME ZONE");
+                        .HasColumnType("datetimeoffset");
 
                     b.Property<bool>("deleted")
-                        .HasColumnType("NUMBER(1)");
+                        .HasColumnType("bit");
 
                     b.Property<DateTimeOffset?>("updateat")
-                        .HasColumnType("TIMESTAMP(7) WITH TIME ZONE");
+                        .HasColumnType("datetimeoffset");
 
                     b.HasKey("id");
 
@@ -447,33 +696,33 @@ namespace truyenthongso.Migrations
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("NUMBER(10)");
+                        .HasColumnType("int");
 
-                    OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
 
                     b.Property<string>("Address")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Email")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Website")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("creator")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTimeOffset?>("cretoredat")
-                        .HasColumnType("TIMESTAMP(7) WITH TIME ZONE");
+                        .HasColumnType("datetimeoffset");
 
                     b.Property<bool>("deleted")
-                        .HasColumnType("NUMBER(1)");
+                        .HasColumnType("bit");
 
                     b.Property<DateTimeOffset?>("updateat")
-                        .HasColumnType("TIMESTAMP(7) WITH TIME ZONE");
+                        .HasColumnType("datetimeoffset");
 
                     b.HasKey("id");
 
@@ -484,30 +733,30 @@ namespace truyenthongso.Migrations
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("NUMBER(10)");
+                        .HasColumnType("int");
 
-                    OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
 
                     b.Property<string>("Description")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Title")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("Use_id")
-                        .HasColumnType("NUMBER(10)");
+                        .HasColumnType("int");
 
                     b.Property<string>("creator")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTimeOffset?>("cretoredat")
-                        .HasColumnType("TIMESTAMP(7) WITH TIME ZONE");
+                        .HasColumnType("datetimeoffset");
 
                     b.Property<bool>("deleted")
-                        .HasColumnType("NUMBER(1)");
+                        .HasColumnType("bit");
 
                     b.Property<DateTimeOffset?>("updateat")
-                        .HasColumnType("TIMESTAMP(7) WITH TIME ZONE");
+                        .HasColumnType("datetimeoffset");
 
                     b.HasKey("id");
 
@@ -520,42 +769,42 @@ namespace truyenthongso.Migrations
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("NUMBER(10)");
+                        .HasColumnType("int");
 
-                    OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
 
                     b.Property<bool?>("Action")
-                        .HasColumnType("NUMBER(1)");
+                        .HasColumnType("bit");
 
                     b.Property<float?>("AverageiewTime")
-                        .HasColumnType("BINARY_FLOAT");
+                        .HasColumnType("real");
 
                     b.Property<int?>("Category_id")
-                        .HasColumnType("NUMBER(10)");
+                        .HasColumnType("int");
 
                     b.Property<string>("Description")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Title")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("User_id")
-                        .HasColumnType("NUMBER(10)");
+                        .HasColumnType("int");
 
                     b.Property<int?>("Views")
-                        .HasColumnType("NUMBER(10)");
+                        .HasColumnType("int");
 
                     b.Property<string>("creator")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTimeOffset?>("cretoredat")
-                        .HasColumnType("TIMESTAMP(7) WITH TIME ZONE");
+                        .HasColumnType("datetimeoffset");
 
                     b.Property<bool>("deleted")
-                        .HasColumnType("NUMBER(1)");
+                        .HasColumnType("bit");
 
                     b.Property<DateTimeOffset?>("updateat")
-                        .HasColumnType("TIMESTAMP(7) WITH TIME ZONE");
+                        .HasColumnType("datetimeoffset");
 
                     b.HasKey("id");
 
@@ -570,33 +819,33 @@ namespace truyenthongso.Migrations
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("NUMBER(10)");
+                        .HasColumnType("int");
 
-                    OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
 
                     b.Property<int?>("Post_id")
-                        .HasColumnType("NUMBER(10)");
+                        .HasColumnType("int");
 
                     b.Property<string>("PublicId")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Url")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("creator")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTimeOffset?>("cretoredat")
-                        .HasColumnType("TIMESTAMP(7) WITH TIME ZONE");
+                        .HasColumnType("datetimeoffset");
 
                     b.Property<bool>("deleted")
-                        .HasColumnType("NUMBER(1)");
+                        .HasColumnType("bit");
 
                     b.Property<int?>("postid")
-                        .HasColumnType("NUMBER(10)");
+                        .HasColumnType("int");
 
                     b.Property<DateTimeOffset?>("updateat")
-                        .HasColumnType("TIMESTAMP(7) WITH TIME ZONE");
+                        .HasColumnType("datetimeoffset");
 
                     b.HasKey("id");
 
@@ -605,31 +854,66 @@ namespace truyenthongso.Migrations
                     b.ToTable("postImages");
                 });
 
+            modelBuilder.Entity("truyenthongso.Models.PostUserTag", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
+
+                    b.Property<string>("creator")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTimeOffset?>("cretoredat")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<bool>("deleted")
+                        .HasColumnType("bit");
+
+                    b.Property<int?>("post_id")
+                        .HasColumnType("int");
+
+                    b.Property<DateTimeOffset?>("updateat")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<int?>("user_id")
+                        .HasColumnType("int");
+
+                    b.HasKey("id");
+
+                    b.HasIndex("post_id");
+
+                    b.HasIndex("user_id");
+
+                    b.ToTable("postUserTags");
+                });
+
             modelBuilder.Entity("truyenthongso.Models.Rating", b =>
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("NUMBER(10)");
+                        .HasColumnType("int");
 
-                    OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
 
                     b.Property<int?>("Start")
-                        .HasColumnType("NUMBER(10)");
+                        .HasColumnType("int");
 
                     b.Property<int?>("User_id")
-                        .HasColumnType("NUMBER(10)");
+                        .HasColumnType("int");
 
                     b.Property<string>("creator")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTimeOffset?>("cretoredat")
-                        .HasColumnType("TIMESTAMP(7) WITH TIME ZONE");
+                        .HasColumnType("datetimeoffset");
 
                     b.Property<bool>("deleted")
-                        .HasColumnType("NUMBER(1)");
+                        .HasColumnType("bit");
 
                     b.Property<DateTimeOffset?>("updateat")
-                        .HasColumnType("TIMESTAMP(7) WITH TIME ZONE");
+                        .HasColumnType("datetimeoffset");
 
                     b.HasKey("id");
 
@@ -642,27 +926,27 @@ namespace truyenthongso.Migrations
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("NUMBER(10)");
+                        .HasColumnType("int");
 
-                    OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
 
                     b.Property<string>("Description")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Url")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("creator")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTimeOffset?>("cretoredat")
-                        .HasColumnType("TIMESTAMP(7) WITH TIME ZONE");
+                        .HasColumnType("datetimeoffset");
 
                     b.Property<bool>("deleted")
-                        .HasColumnType("NUMBER(1)");
+                        .HasColumnType("bit");
 
                     b.Property<DateTimeOffset?>("updateat")
-                        .HasColumnType("TIMESTAMP(7) WITH TIME ZONE");
+                        .HasColumnType("datetimeoffset");
 
                     b.HasKey("id");
 
@@ -673,33 +957,33 @@ namespace truyenthongso.Migrations
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("NUMBER(10)");
+                        .HasColumnType("int");
 
-                    OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
 
                     b.Property<int?>("Post_id")
-                        .HasColumnType("NUMBER(10)");
+                        .HasColumnType("int");
 
                     b.Property<int?>("User_id")
-                        .HasColumnType("NUMBER(10)");
+                        .HasColumnType("int");
 
                     b.Property<string>("creator")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTimeOffset?>("cretoredat")
-                        .HasColumnType("TIMESTAMP(7) WITH TIME ZONE");
+                        .HasColumnType("datetimeoffset");
 
                     b.Property<bool>("deleted")
-                        .HasColumnType("NUMBER(1)");
+                        .HasColumnType("bit");
 
                     b.Property<int?>("status")
-                        .HasColumnType("NUMBER(10)");
+                        .HasColumnType("int");
 
                     b.Property<string>("title")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTimeOffset?>("updateat")
-                        .HasColumnType("TIMESTAMP(7) WITH TIME ZONE");
+                        .HasColumnType("datetimeoffset");
 
                     b.HasKey("id");
 
@@ -714,24 +998,24 @@ namespace truyenthongso.Migrations
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("NUMBER(10)");
+                        .HasColumnType("int");
 
-                    OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
 
                     b.Property<string>("Name")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("creator")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTimeOffset?>("cretoredat")
-                        .HasColumnType("TIMESTAMP(7) WITH TIME ZONE");
+                        .HasColumnType("datetimeoffset");
 
                     b.Property<bool>("deleted")
-                        .HasColumnType("NUMBER(1)");
+                        .HasColumnType("bit");
 
                     b.Property<DateTimeOffset?>("updateat")
-                        .HasColumnType("TIMESTAMP(7) WITH TIME ZONE");
+                        .HasColumnType("datetimeoffset");
 
                     b.HasKey("id");
 
@@ -742,27 +1026,27 @@ namespace truyenthongso.Migrations
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("NUMBER(10)");
+                        .HasColumnType("int");
 
-                    OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
 
                     b.Property<int?>("Post_id")
-                        .HasColumnType("NUMBER(10)");
+                        .HasColumnType("int");
 
                     b.Property<int?>("Tag_id")
-                        .HasColumnType("NUMBER(10)");
+                        .HasColumnType("int");
 
                     b.Property<string>("creator")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTimeOffset?>("cretoredat")
-                        .HasColumnType("TIMESTAMP(7) WITH TIME ZONE");
+                        .HasColumnType("datetimeoffset");
 
                     b.Property<bool>("deleted")
-                        .HasColumnType("NUMBER(1)");
+                        .HasColumnType("bit");
 
                     b.Property<DateTimeOffset?>("updateat")
-                        .HasColumnType("TIMESTAMP(7) WITH TIME ZONE");
+                        .HasColumnType("datetimeoffset");
 
                     b.HasKey("id");
 
@@ -777,27 +1061,27 @@ namespace truyenthongso.Migrations
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("NUMBER(10)");
+                        .HasColumnType("int");
 
-                    OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
 
                     b.Property<string>("creator")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTimeOffset?>("cretoredat")
-                        .HasColumnType("TIMESTAMP(7) WITH TIME ZONE");
+                        .HasColumnType("datetimeoffset");
 
                     b.Property<bool>("deleted")
-                        .HasColumnType("NUMBER(1)");
+                        .HasColumnType("bit");
 
                     b.Property<string>("token")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTimeOffset?>("updateat")
-                        .HasColumnType("TIMESTAMP(7) WITH TIME ZONE");
+                        .HasColumnType("datetimeoffset");
 
                     b.Property<int?>("userid")
-                        .HasColumnType("NUMBER(10)");
+                        .HasColumnType("int");
 
                     b.HasKey("id");
 
@@ -810,72 +1094,75 @@ namespace truyenthongso.Migrations
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("NUMBER(10)");
+                        .HasColumnType("int");
 
-                    OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
 
                     b.Property<bool>("Action")
-                        .HasColumnType("NUMBER(1)");
+                        .HasColumnType("bit");
 
                     b.Property<string>("Address")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Age")
-                        .HasColumnType("NUMBER(10)");
+                        .HasColumnType("int");
 
                     b.Property<bool?>("BlockComplaints")
-                        .HasColumnType("NUMBER(1)");
+                        .HasColumnType("bit");
 
                     b.Property<string>("City")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Commune")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("Complaints")
-                        .HasColumnType("NUMBER(10)");
+                        .HasColumnType("int");
 
                     b.Property<string>("District")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Email")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FullName")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Image")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Nation")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Password")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool?>("Paythefee")
-                        .HasColumnType("NUMBER(1)");
+                        .HasColumnType("bit");
 
                     b.Property<string>("PublicId")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("Start")
-                        .HasColumnType("NUMBER(10)");
+                        .HasColumnType("int");
 
                     b.Property<string>("UserName")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("creator")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTimeOffset?>("cretoredat")
-                        .HasColumnType("TIMESTAMP(7) WITH TIME ZONE");
+                        .HasColumnType("datetimeoffset");
 
                     b.Property<bool>("deleted")
-                        .HasColumnType("NUMBER(1)");
+                        .HasColumnType("bit");
 
                     b.Property<int?>("role_id")
-                        .HasColumnType("NUMBER(10)");
+                        .HasColumnType("int");
 
                     b.Property<DateTimeOffset?>("updateat")
-                        .HasColumnType("TIMESTAMP(7) WITH TIME ZONE");
+                        .HasColumnType("datetimeoffset");
 
                     b.HasKey("id");
 
@@ -888,27 +1175,27 @@ namespace truyenthongso.Migrations
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("NUMBER(10)");
+                        .HasColumnType("int");
 
-                    OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
 
                     b.Property<string>("creator")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTimeOffset?>("cretoredat")
-                        .HasColumnType("TIMESTAMP(7) WITH TIME ZONE");
+                        .HasColumnType("datetimeoffset");
 
                     b.Property<bool>("deleted")
-                        .HasColumnType("NUMBER(1)");
+                        .HasColumnType("bit");
 
                     b.Property<int?>("post_id")
-                        .HasColumnType("NUMBER(10)");
+                        .HasColumnType("int");
 
                     b.Property<DateTimeOffset?>("updateat")
-                        .HasColumnType("TIMESTAMP(7) WITH TIME ZONE");
+                        .HasColumnType("datetimeoffset");
 
                     b.Property<int?>("user_id")
-                        .HasColumnType("NUMBER(10)");
+                        .HasColumnType("int");
 
                     b.HasKey("id");
 
@@ -917,6 +1204,50 @@ namespace truyenthongso.Migrations
                     b.HasIndex("user_id");
 
                     b.ToTable("userStoryViews");
+                });
+
+            modelBuilder.Entity("truyenthongso.Models.Articles_Viewed", b =>
+                {
+                    b.HasOne("truyenthongso.Models.Post", "post")
+                        .WithMany("articles_Vieweds")
+                        .HasForeignKey("post_id")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.HasOne("truyenthongso.Models.User", "user")
+                        .WithMany("articles_Vieweds")
+                        .HasForeignKey("user_id")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.Navigation("post");
+
+                    b.Navigation("user");
+                });
+
+            modelBuilder.Entity("truyenthongso.Models.Behavioral_Analysis", b =>
+                {
+                    b.HasOne("truyenthongso.Models.Category", "category")
+                        .WithMany("behavioral_Analyses")
+                        .HasForeignKey("category_id")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.HasOne("truyenthongso.Models.User", "user")
+                        .WithMany("behavioral_Analyses")
+                        .HasForeignKey("user_id")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.Navigation("category");
+
+                    b.Navigation("user");
+                });
+
+            modelBuilder.Entity("truyenthongso.Models.Citys", b =>
+                {
+                    b.HasOne("truyenthongso.Models.Nation", "nation")
+                        .WithMany("citys")
+                        .HasForeignKey("nation_id")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.Navigation("nation");
                 });
 
             modelBuilder.Entity("truyenthongso.Models.Comment", b =>
@@ -967,6 +1298,23 @@ namespace truyenthongso.Migrations
                     b.Navigation("user");
                 });
 
+            modelBuilder.Entity("truyenthongso.Models.Communes", b =>
+                {
+                    b.HasOne("truyenthongso.Models.Citys", "citys")
+                        .WithMany("communes")
+                        .HasForeignKey("city_id")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.HasOne("truyenthongso.Models.Districts", "districts")
+                        .WithMany("communes")
+                        .HasForeignKey("district_id")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.Navigation("citys");
+
+                    b.Navigation("districts");
+                });
+
             modelBuilder.Entity("truyenthongso.Models.Complaints", b =>
                 {
                     b.HasOne("truyenthongso.Models.User", "user")
@@ -975,6 +1323,16 @@ namespace truyenthongso.Migrations
                         .OnDelete(DeleteBehavior.Restrict);
 
                     b.Navigation("user");
+                });
+
+            modelBuilder.Entity("truyenthongso.Models.Districts", b =>
+                {
+                    b.HasOne("truyenthongso.Models.Citys", "citys")
+                        .WithMany("districts")
+                        .HasForeignKey("city_id")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.Navigation("citys");
                 });
 
             modelBuilder.Entity("truyenthongso.Models.Friendship", b =>
@@ -1011,6 +1369,16 @@ namespace truyenthongso.Migrations
                     b.Navigation("role");
                 });
 
+            modelBuilder.Entity("truyenthongso.Models.Icon", b =>
+                {
+                    b.HasOne("truyenthongso.Models.User", "user")
+                        .WithMany("iconss")
+                        .HasForeignKey("user_id")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.Navigation("user");
+                });
+
             modelBuilder.Entity("truyenthongso.Models.Interest", b =>
                 {
                     b.HasOne("truyenthongso.Models.User", "user")
@@ -1032,6 +1400,13 @@ namespace truyenthongso.Migrations
                         .WithMany("Likes")
                         .HasForeignKey("User_id")
                         .OnDelete(DeleteBehavior.Restrict);
+
+                    b.HasOne("truyenthongso.Models.Icon", "icon")
+                        .WithMany("likes")
+                        .HasForeignKey("icon_id")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.Navigation("icon");
 
                     b.Navigation("post");
 
@@ -1089,6 +1464,23 @@ namespace truyenthongso.Migrations
                         .HasForeignKey("postid");
 
                     b.Navigation("post");
+                });
+
+            modelBuilder.Entity("truyenthongso.Models.PostUserTag", b =>
+                {
+                    b.HasOne("truyenthongso.Models.Post", "post")
+                        .WithMany("postUserTagss")
+                        .HasForeignKey("post_id")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.HasOne("truyenthongso.Models.User", "user")
+                        .WithMany("postUserTagss")
+                        .HasForeignKey("user_id")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.Navigation("post");
+
+                    b.Navigation("user");
                 });
 
             modelBuilder.Entity("truyenthongso.Models.Rating", b =>
@@ -1175,6 +1567,15 @@ namespace truyenthongso.Migrations
             modelBuilder.Entity("truyenthongso.Models.Category", b =>
                 {
                     b.Navigation("Posts");
+
+                    b.Navigation("behavioral_Analyses");
+                });
+
+            modelBuilder.Entity("truyenthongso.Models.Citys", b =>
+                {
+                    b.Navigation("communes");
+
+                    b.Navigation("districts");
                 });
 
             modelBuilder.Entity("truyenthongso.Models.Comment", b =>
@@ -1189,9 +1590,24 @@ namespace truyenthongso.Migrations
                     b.Navigation("commentDescriptions3");
                 });
 
+            modelBuilder.Entity("truyenthongso.Models.Districts", b =>
+                {
+                    b.Navigation("communes");
+                });
+
             modelBuilder.Entity("truyenthongso.Models.Group", b =>
                 {
                     b.Navigation("Group_Roles");
+                });
+
+            modelBuilder.Entity("truyenthongso.Models.Icon", b =>
+                {
+                    b.Navigation("likes");
+                });
+
+            modelBuilder.Entity("truyenthongso.Models.Nation", b =>
+                {
+                    b.Navigation("citys");
                 });
 
             modelBuilder.Entity("truyenthongso.Models.NewspaperType", b =>
@@ -1215,6 +1631,10 @@ namespace truyenthongso.Migrations
                     b.Navigation("Sheres");
 
                     b.Navigation("TagPosts");
+
+                    b.Navigation("articles_Vieweds");
+
+                    b.Navigation("postUserTagss");
 
                     b.Navigation("userStoryViews");
                 });
@@ -1254,6 +1674,14 @@ namespace truyenthongso.Migrations
                     b.Navigation("Ratings");
 
                     b.Navigation("Sheres");
+
+                    b.Navigation("articles_Vieweds");
+
+                    b.Navigation("behavioral_Analyses");
+
+                    b.Navigation("iconss");
+
+                    b.Navigation("postUserTagss");
 
                     b.Navigation("tokens");
 

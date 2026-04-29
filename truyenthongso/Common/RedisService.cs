@@ -1,6 +1,7 @@
 ﻿using StackExchange.Redis;
 using System.Runtime.CompilerServices;
 using System.Text.Json;
+using truyenthongso.Service;
 
 namespace truyenthongso.Common
 {

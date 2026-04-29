@@ -26,6 +26,13 @@ namespace truyenthongso.Controllers
             return await _productService.FindAllAI(name, category, page, pageSize);
         }
 
+        [HttpGet]
+        [Route(nameof(FindAll))]
+        public async Task<PayLoad<object>> FindAll(string? name, int page = 1, int pageSize = 10)
+        {
+            return await _productService.FindAll(name, page, pageSize);
+        }
+
         [HttpPost]
         [Route(nameof(Add))]
         public async Task<PayLoad<ProductDTO>> Add([FromForm]ProductDTO data)

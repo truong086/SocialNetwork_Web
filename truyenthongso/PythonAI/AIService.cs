@@ -1,5 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using truyenthongso.Common;
 using truyenthongso.Models;
+using truyenthongso.ViewModel;
 
 namespace truyenthongso.PythonAI
 {
@@ -27,6 +29,27 @@ namespace truyenthongso.PythonAI
             catch(Exception ex)
             {
                 Console.WriteLine($"Lỗi xảy ra: {ex.Message}");
+                return await Task.FromResult(-1f);
+            }
+        }
+
+        public async Task<float> GetAi(TraningModel data)
+        {
+            try
+            {
+                using var client = new HttpClient();
+                var response = await client.PostAsJsonAsync("http://127.0.0.1:5001/predict", data);
+
+                if (!response.IsSuccessStatusCode)
+                {
+                    throw new Exception("AI service failed");
+                }
+
+                var result = await response.Content.ReadFromJsonAsync<AIResult>();
+                return result.score;
+            }
+            catch (Exception ex)
+            {
                 return await Task.FromResult(-1f);
             }
         }

@@ -1,5 +1,4 @@
 ﻿
-using Microsoft.Extensions.DependencyInjection;
 using truyenthongso.Service;
 
 namespace truyenthongso.FunctionAuto
@@ -11,12 +10,15 @@ namespace truyenthongso.FunctionAuto
         {
             _serviceScopeFactory = serviceScopeFactory;
         }
-        public async Task RunOnceAsync()
+        public async Task RunOnceAsync(int id = 0)
         {
+            // Đợi 1 phút
+            await Task.Delay(TimeSpan.FromMinutes(1));
+
             using (var scope = _serviceScopeFactory.CreateScope())
             {
                 var accountService = scope.ServiceProvider.GetRequiredService<IUserService>();
-                await accountService.DeleteAccountNoAction();
+                await accountService.DeleteAccountNoAction(id);
             }
         }
 

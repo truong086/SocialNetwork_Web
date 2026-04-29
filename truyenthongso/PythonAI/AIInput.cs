@@ -2,7 +2,7 @@
 {
     public class AIInput
     {
-        public int UserId { get; set; }
+        public int? UserId { get; set; }
         public int CategoryId { get; set; }
         public float TimeOnPage { get; set; }
         public bool ScrolledToBottom { get; set; }
