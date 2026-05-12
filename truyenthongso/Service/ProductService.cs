@@ -112,6 +112,26 @@ namespace truyenthongso.Service
                     }
                 }
 
+                if (productDTO.tag_friendId != null && productDTO.tag_friendId.userId.Count > 0) 
+                {
+                    var userFriendTag = _context.users.Where(x => productDTO.tag_friendId.userId.Contains(x.id) && !x.deleted).ToList();
+
+                    var dataTagFriend = userFriendTag.Select(x => new Tag_Friend
+                    {
+                        post = dataNew,
+                        post_id = dataNew.id,
+                        user = checkUser,
+                        user_id = checkUser.id,
+                        friend = x,
+                        friend_id = x.id
+                    }).ToList();
+
+                    if (dataTagFriend.Any())
+                    {
+                        _context.tag_Friends.AddRange(dataTagFriend);
+                    }
+                }
+
                 await _context.SaveChangesAsync();
 
                 return await Task.FromResult(PayLoad<ProductDTO>.Successfully(productDTO));
@@ -163,7 +183,11 @@ namespace truyenthongso.Service
                     
                     
                 }
+
                 await _context.SaveChangesAsync();
+
+                var total_Like = _context.likes.Where(x => x.Post_id == likeDTO.Post_id && !x.deleted).Count();
+                likeDTO.totalLike = total_Like;
 
                 return await Task.FromResult(PayLoad<LikeDTO>.Successfully(likeDTO));
             }

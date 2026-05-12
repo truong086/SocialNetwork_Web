@@ -139,8 +139,12 @@ namespace truyenthongso.Service
                     x.role.Url,
                     x.Action,
                     x.cretoredat
-                }).ToList();
+                });
 
+                if (!string.IsNullOrEmpty(name))
+                    data = data.Where(x => x.FullName.Contains(name) || x.UserName.Contains(name));
+
+                data.ToList();
                 var pageList = new PageList<object>(data, page - 1, pageSize);
                 return await Task.FromResult(PayLoad<object>.Successfully(new
                 {
@@ -388,6 +392,47 @@ namespace truyenthongso.Service
         {
              _userNameService.Logout();
             return await Task.FromResult(PayLoad<string>.Successfully(Status.SUCCESS));
+        }
+
+        public async Task<PayLoad<object>> FindAllSearchFriend(string? name)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(name)) return await Task.FromResult(PayLoad<object>.CreatedFail(Status.DATANULL));
+
+                if(int.TryParse(_userNameService.name(), out int n))
+                {
+                    var checkFriend = _context.friendships.Where(x => (x.UserId1 == n || x.UserId2 == n) && !x.deleted).Select(x => new {
+                        id1 = x.UserId1 ?? 0,
+                        id2 = x.UserId2 ?? 0
+                    }).ToList();
+
+                    var checkUserFriend = _context.users.Where(x => (x.UserName.Contains(name) || x.FullName.Contains(name)) && !x.deleted).ToList();
+                    var data = checkUserFriend.Where(x => checkFriend.Any(f => f.id1 == x.id || f.id2 == x.id) && x.id != n).Select(x => new
+                    {
+                        x.id,
+                        x.FullName,
+                        x.UserName,
+                        x.Email,
+                        x.Image,
+                        x.Address,
+                        x.role.Url,
+                        x.Action,
+                        x.cretoredat
+                    }).ToList();
+
+                    return await Task.FromResult(PayLoad<object>.Successfully(new
+                    {
+                        data
+                    }));
+                }
+
+                return await Task.FromResult(PayLoad<object>.CreatedFail(Status.DATANULL));
+            }
+            catch (Exception ex) 
+            {
+                return await Task.FromResult(PayLoad<object>.CreatedFail(ex.Message));
+            }
         }
     }
 }

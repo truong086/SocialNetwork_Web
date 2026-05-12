@@ -1214,6 +1214,263 @@
         }
       }
     },
+    "/api/FriendShip/FindAll": {
+      "get": {
+        "tags": [
+          "FriendShip"
+        ],
+        "parameters": [
+          {
+            "name": "name",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 1
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 20
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectPayLoad"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectPayLoad"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectPayLoad"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/FriendShip/FindOneId": {
+      "get": {
+        "tags": [
+          "FriendShip"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectPayLoad"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectPayLoad"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectPayLoad"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/FriendShip/Suggestafriend": {
+      "get": {
+        "tags": [
+          "FriendShip"
+        ],
+        "parameters": [
+          {
+            "name": "name",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 1
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 20
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectPayLoad"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectPayLoad"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectPayLoad"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/FriendShip/GetSuggestions": {
+      "get": {
+        "tags": [
+          "FriendShip"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/SuggestionDtoListPayLoad"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SuggestionDtoListPayLoad"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SuggestionDtoListPayLoad"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/FriendShip/TestRedis": {
+      "get": {
+        "tags": [
+          "FriendShip"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectPayLoad"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectPayLoad"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectPayLoad"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/FriendShip/AddFriend": {
+      "post": {
+        "tags": [
+          "FriendShip"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FriendShipDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FriendShipDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/FriendShipDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/FriendShipDTOPayLoad"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FriendShipDTOPayLoad"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FriendShipDTOPayLoad"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/Group/findAll": {
       "get": {
         "tags": [
@@ -2127,6 +2384,13 @@
                       "type": "integer",
                       "format": "int32"
                     }
+                  },
+                  "tag_friendId.userId": {
+                    "type": "array",
+                    "items": {
+                      "type": "integer",
+                      "format": "int32"
+                    }
                   }
                 }
               },
@@ -2144,6 +2408,9 @@
                   "style": "form"
                 },
                 "tagId": {
+                  "style": "form"
+                },
+                "tag_friendId.userId": {
                   "style": "form"
                 }
               }
@@ -3007,6 +3274,44 @@
         }
       }
     },
+    "/api/User/FindAllSearchFriend": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "parameters": [
+          {
+            "name": "name",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectPayLoad"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectPayLoad"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectPayLoad"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/User/Add": {
       "post": {
         "tags": [
@@ -3448,6 +3753,43 @@
         },
         "additionalProperties": false
       },
+      "FriendShipDTO": {
+        "type": "object",
+        "properties": {
+          "user1": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "user2": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "status": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "FriendShipDTOPayLoad": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean"
+          },
+          "error": {
+            "nullable": true
+          },
+          "errorCode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "content": {
+            "$ref": "#/components/schemas/FriendShipDTO"
+          }
+        },
+        "additionalProperties": false
+      },
       "GroupDTO": {
         "type": "object",
         "properties": {
@@ -3565,6 +3907,11 @@
           "status": {
             "type": "integer",
             "format": "int32"
+          },
+          "totalLike": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -3652,6 +3999,9 @@
               "format": "int32"
             },
             "nullable": true
+          },
+          "tag_friendId": {
+            "$ref": "#/components/schemas/Tag_FriendDTO"
           }
         },
         "additionalProperties": false
@@ -3728,6 +4078,58 @@
         },
         "additionalProperties": false
       },
+      "SuggestionDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "avatar": {
+            "type": "string",
+            "nullable": true
+          },
+          "mutualCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "mutual_friend": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SuggestionDto"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "SuggestionDtoListPayLoad": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean"
+          },
+          "error": {
+            "nullable": true
+          },
+          "errorCode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "content": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SuggestionDto"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "TagDTO": {
         "type": "object",
         "properties": {
@@ -3753,6 +4155,20 @@
           },
           "content": {
             "$ref": "#/components/schemas/TagDTO"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Tag_FriendDTO": {
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "nullable": true
           }
         },
         "additionalProperties": false

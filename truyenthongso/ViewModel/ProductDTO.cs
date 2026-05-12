@@ -7,5 +7,6 @@
         public int? Categoryid { get; set; }
         public List<IFormFile>? images { get; set; }
         public List<int>? tagId { get; set; }
+        public Tag_FriendDTO? tag_friendId { get; set; }
     }
 }

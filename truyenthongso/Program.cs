@@ -20,6 +20,7 @@ using truyenthongso.Models;
 using truyenthongso.PythonAI;
 using truyenthongso.QuartzService;
 using truyenthongso.Service;
+using truyenthongso.ViewModel;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -173,6 +174,22 @@ builder.Services.AddScoped<IArticles_ViewedService, Articles_ViewedService>();
 builder.Services.AddScoped<ITraningModelService, TraningModelService>();
 builder.Services.AddScoped<IIconService, IconService>();
 builder.Services.AddScoped<IRedisService, CacheFuncsService>();
+builder.Services.AddScoped<IFriendShipService, FriendShipService>();
+builder.Services.AddScoped<RedisService>();
+builder.Services.Configure<RedisConfig>(
+    builder.Configuration.GetSection("Redis"));
+
+builder.Services.AddSingleton<IConnectionMultiplexer>(sp =>
+{
+    var config = sp.GetRequiredService<IConfiguration>();
+    var connectionString = config.GetConnectionString("Redis");
+
+    var options = ConfigurationOptions.Parse(connectionString);
+    options.AllowAdmin = true;
+    return ConnectionMultiplexer.Connect(options);
+    //return ConnectionMultiplexer.Connect(connectionString);
+});
+
 //builder.Services.AddScoped<TuDongMoiTuan>();
 builder.Services.AddScoped<SendEmais>();
 builder.Services.AddScoped<KiemTraBase64>();

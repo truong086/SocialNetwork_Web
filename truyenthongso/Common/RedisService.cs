@@ -1,24 +1,37 @@
-﻿using StackExchange.Redis;
+﻿using Microsoft.Extensions.Options;
+using StackExchange.Redis;
 using System.Runtime.CompilerServices;
 using System.Text.Json;
 using truyenthongso.Service;
+using truyenthongso.ViewModel;
 
 namespace truyenthongso.Common
 {
     public class RedisService
     {
-        private readonly ConnectionMultiplexer _redis;
+        //private readonly ConnectionMultiplexer _redis;
         private readonly IDatabase _db;
 
-        public RedisService(string connectionString)
+        public RedisService(IConnectionMultiplexer _connection)
         {
-            _redis = ConnectionMultiplexer.Connect(connectionString);
-            _db = _redis.GetDatabase();
+            _db = _connection.GetDatabase();
         }
+        //public RedisService(IOptions<RedisConfig> options, IConnectionMultiplexer _connection)
+        //{
+        //    var connectionString = options.Value.ConnectionString;
+
+        //    //_redis = ConnectionMultiplexer.Connect(connectionString);
+        //    _db = _connection.GetDatabase();
+        //}
 
         public async Task SetAsync(string key, string[] value)
         {
             await _db.SetAddAsync(key, value.Select(v => (RedisValue)v).ToArray());
+        }
+
+        public async Task<bool> HashExistsAsync(string key, string id)
+        {
+            return await _db.HashExistsAsync(key, id);
         }
 
         public async Task<string[]> GetSetAsync(string key)
@@ -65,6 +78,14 @@ namespace truyenthongso.Common
         {
             var json = JsonSerializer.Serialize(data);
             await _db.StringSetAsync(key, json, expiry);
+        }
+
+        public async Task AddSetAsync(string key, List<string> values)
+        {
+            foreach (var value in values)
+            {
+                await _db.SetAddAsync(key, value);
+            }
         }
 
         public async Task<T?> GetAsync<T>(string key)
@@ -122,6 +143,15 @@ namespace truyenthongso.Common
                 .ToList();
         }
 
+        public async Task<T> HashGetAsync<T> (string key, string fieldId)
+        {
+            var value = await _db.HashGetAsync(key, fieldId);
+
+            return JsonSerializer.Deserialize<T>(
+                value.ToString()
+                );
+        }
+
         public async Task SortedSetAddManyAsync(string key, List<(string member, double score)> values)
         {
             var entries = values.Select(x => new SortedSetEntry(x.member, x.score)).ToArray();
@@ -133,6 +163,23 @@ namespace truyenthongso.Common
             var entries = values.Select(x => new HashEntry(x.field, x.value)).ToArray();
             await _db.HashSetAsync(key, entries);
         }
+
+        public async Task UpdateHashAsync<T>(
+                string key,
+                string field,
+                T data
+            )
+         {
+                var json = JsonSerializer.Serialize(data);
+
+                await _db.HashSetAsync(
+                    key,
+                    field,
+                    json
+                );
+        }
+
+
 
         public async Task<List<string>> SortedSetRangeByScoreAsync(string key, long skip = 0, long take = 20, Order order = Order.Descending)
         {

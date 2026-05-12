@@ -14,6 +14,7 @@ namespace truyenthongso.Service
         Task<PayLoad<string>> Action(ActionUser data);
         Task<PayLoad<string>> GenToken (string email);
         Task<PayLoad<object>> FindAll(string? name, int page = 1, int pageSize = 20);
+        Task<PayLoad<object>> FindAllSearchFriend(string? name);
         Task<PayLoad<object>> FindOne(int id);
     }
 }

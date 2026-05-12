@@ -40,5 +40,7 @@ namespace truyenthongso.Models
         public ICollection<Articles_Viewed>? articles_Vieweds { get; set; }
         public ICollection<Behavioral_Analysis>? behavioral_Analyses { get; set; }
         public ICollection<Icon>? iconss { get; set; }
+        public ICollection<Tag_Friend>? tag_Friends { get; set; }
+        public ICollection<Tag_Friend>? friends { get; set; }
     }
 }

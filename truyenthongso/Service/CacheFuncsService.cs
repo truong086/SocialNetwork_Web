@@ -39,7 +39,7 @@ namespace truyenthongso.Service
 
                     foreach (var cache in item)
                     {
-                        await batch.SetAddAsync(key, cache.Post_id);
+                         batch.SetAddAsync(key, cache.Post_id);
                     }
                 }
 

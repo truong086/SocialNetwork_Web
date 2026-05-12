@@ -30,6 +30,13 @@ namespace truyenthongso.Controllers
             return await _userService.FindOne(id);
         }
 
+        [HttpGet]
+        [Route(nameof(FindAllSearchFriend))]
+        public async Task<PayLoad<object>> FindAllSearchFriend(string? name)
+        {
+            return await _userService.FindAllSearchFriend(name);
+        }
+
         [HttpPost]
         [Route(nameof(Add))]
         public async Task<PayLoad<UserDTO>> Add(UserDTO userDTO)

@@ -21,5 +21,6 @@ namespace truyenthongso.Models
         public ICollection<UserStoryView>? userStoryViews { get; set; }
         public ICollection<PostUserTag>? postUserTagss { get; set; }
         public ICollection<Articles_Viewed>? articles_Vieweds { get; set; }
+        public ICollection<Tag_Friend>? tag_Friends { get; set; }
     }
 }

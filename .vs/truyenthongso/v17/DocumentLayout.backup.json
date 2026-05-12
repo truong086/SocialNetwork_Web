@@ -7,12 +7,36 @@
       "RelativeMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|solutionrelative:truyenthongso\\service\\friendshipservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|c:\\users\\haune\\desktop\\mangxahoi\\truyenthongso\\truyenthongso\\common\\redisservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|solutionrelative:truyenthongso\\common\\redisservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|c:\\users\\haune\\desktop\\mangxahoi\\truyenthongso\\truyenthongso\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|solutionrelative:truyenthongso\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|c:\\users\\haune\\desktop\\mangxahoi\\truyenthongso\\truyenthongso\\service\\cachefuncsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|solutionrelative:truyenthongso\\service\\cachefuncsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|c:\\users\\haune\\desktop\\mangxahoi\\truyenthongso\\truyenthongso\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|solutionrelative:truyenthongso\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|c:\\users\\haune\\desktop\\mangxahoi\\truyenthongso\\truyenthongso\\models\\dbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|solutionrelative:truyenthongso\\models\\dbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|c:\\users\\haune\\desktop\\mangxahoi\\truyenthongso\\truyenthongso\\viewmodel\\redisconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|solutionrelative:truyenthongso\\viewmodel\\redisconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|c:\\users\\haune\\desktop\\mangxahoi\\truyenthongso\\truyenthongso\\service\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|solutionrelative:truyenthongso\\service\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|c:\\users\\haune\\desktop\\mangxahoi\\truyenthongso\\truyenthongso\\service\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F99F4D4-C97B-4347-B52D-122A80662D98}|truyenthongso\\truyenthongso.csproj|solutionrelative:truyenthongso\\service\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,8 +46,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "RedisService.cs",
+              "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Common\\RedisService.cs",
+              "RelativeDocumentMoniker": "truyenthongso\\Common\\RedisService.cs",
+              "ToolTip": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Common\\RedisService.cs",
+              "RelativeToolTip": "truyenthongso\\Common\\RedisService.cs",
+              "ViewState": "AgIAAJ4AAAAAAAAAAAAwwKYAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-11T06:10:32.128Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -32,33 +69,93 @@
               "RelativeDocumentMoniker": "truyenthongso\\Service\\FriendShipService.cs",
               "ToolTip": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Service\\FriendShipService.cs",
               "RelativeToolTip": "truyenthongso\\Service\\FriendShipService.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAYwCsAAAA3AAAAAAAAAA==",
+              "ViewState": "AgIAAJcBAAAAAAAAAAAAAJ0BAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-29T07:48:48.617Z",
+              "WhenOpened": "2026-05-08T03:59:02.126Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\appsettings.json",
+              "RelativeDocumentMoniker": "truyenthongso\\appsettings.json",
+              "ToolTip": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\appsettings.json",
+              "RelativeToolTip": "truyenthongso\\appsettings.json",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAoAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-05-05T06:44:20.406Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Program.cs",
               "RelativeDocumentMoniker": "truyenthongso\\Program.cs",
               "ToolTip": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Program.cs",
               "RelativeToolTip": "truyenthongso\\Program.cs",
-              "ViewState": "AgIAAJ0AAAAAAAAAAAAAAKsAAABOAAAAAAAAAA==",
+              "ViewState": "AgIAADAAAAAAAAAAAAD4v0wAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-29T07:48:14.999Z",
+              "WhenOpened": "2026-05-05T03:52:15.404Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
+              "Title": "RedisConfig.cs",
+              "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\ViewModel\\RedisConfig.cs",
+              "RelativeDocumentMoniker": "truyenthongso\\ViewModel\\RedisConfig.cs",
+              "ToolTip": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\ViewModel\\RedisConfig.cs",
+              "RelativeToolTip": "truyenthongso\\ViewModel\\RedisConfig.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-05T03:43:03.357Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Service\\UserService.cs",
+              "RelativeDocumentMoniker": "truyenthongso\\Service\\UserService.cs",
+              "ToolTip": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Service\\UserService.cs",
+              "RelativeToolTip": "truyenthongso\\Service\\UserService.cs",
+              "ViewState": "AgIAAFsBAAAAAAAAAAAswIwBAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-05T01:41:50.938Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "DBContext.cs",
+              "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Models\\DBContext.cs",
+              "RelativeDocumentMoniker": "truyenthongso\\Models\\DBContext.cs",
+              "ToolTip": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Models\\DBContext.cs",
+              "RelativeToolTip": "truyenthongso\\Models\\DBContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAABQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-05T01:24:35.764Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ProductService.cs",
+              "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Service\\ProductService.cs",
+              "RelativeDocumentMoniker": "truyenthongso\\Service\\ProductService.cs",
+              "ToolTip": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Service\\ProductService.cs",
+              "RelativeToolTip": "truyenthongso\\Service\\ProductService.cs",
+              "ViewState": "AgIAAE0AAAAAAAAAAAAIwGsAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-04T06:52:47.19Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "CacheFuncsService.cs",
               "DocumentMoniker": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Service\\CacheFuncsService.cs",
               "RelativeDocumentMoniker": "truyenthongso\\Service\\CacheFuncsService.cs",
               "ToolTip": "C:\\Users\\haune\\Desktop\\MangXaHoi\\truyenthongso\\truyenthongso\\Service\\CacheFuncsService.cs",
               "RelativeToolTip": "truyenthongso\\Service\\CacheFuncsService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAAFUAAAAAAAAAAAAgwGEAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-29T07:47:42.724Z",
               "EditorCaption": ""
