@@ -23,8 +23,11 @@ namespace truyenthongso.Service
         private readonly IHttpContextAccessor _httpContextAccessor;
         private readonly IUserNameService _userNameService;
         private readonly VerificationTaskWorker _verificationTaskWorker;
+        private readonly RedisService _redisService;
         public UserService(DBContext context, IMapper mapper, IOptionsMonitor<Jwt> jwt, IOptions<Cloud> cloud,
-            SendEmais emails, IHttpContextAccessor httpContextAccessor, IUserNameService userNameService, VerificationTaskWorker verificationTaskWorker)
+            SendEmais emails, IHttpContextAccessor httpContextAccessor, IUserNameService userNameService,
+            VerificationTaskWorker verificationTaskWorker,
+            RedisService redisService)
         {
             _context = context;
             _mapper = mapper;
@@ -34,7 +37,7 @@ namespace truyenthongso.Service
             _httpContextAccessor = httpContextAccessor;
             _userNameService = userNameService;
             _verificationTaskWorker = verificationTaskWorker;
-
+            _redisService = redisService;
         }
         public async Task<PayLoad<UserDTO>> Add(UserDTO userDTO)
         {
@@ -370,7 +373,8 @@ namespace truyenthongso.Service
                 var claims = new List<Claim>
                 {
                     new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-                    new Claim(Status.IDAUTHENTICATION, checkData.id.ToString())
+                    new Claim(Status.IDAUTHENTICATION, checkData.id.ToString()),
+                    new Claim(ClaimTypes.NameIdentifier, checkData.id.ToString())
                 };
 
                 return await Task.FromResult(PayLoad<object>.Successfully(new
@@ -402,28 +406,47 @@ namespace truyenthongso.Service
 
                 if(int.TryParse(_userNameService.name(), out int n))
                 {
-                    var checkFriend = _context.friendships.Where(x => (x.UserId1 == n || x.UserId2 == n) && !x.deleted).Select(x => new {
-                        id1 = x.UserId1 ?? 0,
-                        id2 = x.UserId2 ?? 0
-                    }).ToList();
+                    //var checkFriend = _context.friendships.Where(x => (x.UserId1 == n || x.UserId2 == n) && !x.deleted).Select(x => new {
+                    //    id1 = x.UserId1 ?? 0,
+                    //    id2 = x.UserId2 ?? 0
+                    //}).ToList();
 
-                    var checkUserFriend = _context.users.Where(x => (x.UserName.Contains(name) || x.FullName.Contains(name)) && !x.deleted).ToList();
-                    var data = checkUserFriend.Where(x => checkFriend.Any(f => f.id1 == x.id || f.id2 == x.id) && x.id != n).Select(x => new
+                    //var checkUserFriend = _context.users.Where(x => (x.UserName.Contains(name) || x.FullName.Contains(name)) && !x.deleted).ToList();
+                    //var data = checkUserFriend.Where(x => checkFriend.Any(f => f.id1 == x.id || f.id2 == x.id) && x.id != n).Select(x => new
+                    //{
+                    //    x.id,
+                    //    x.FullName,
+                    //    x.UserName,
+                    //    x.Email,
+                    //    x.Image,
+                    //    x.Address,
+                    //    x.role.Url,
+                    //    x.Action,
+                    //    x.cretoredat
+                    //}).ToList();
+
+                    //return await Task.FromResult(PayLoad<object>.Successfully(new
+                    //{
+                    //    data
+                    //}));
+
+                    var keyRedis = await _redisService.GetSetAsync($"user:{n}:friends");
+
+                    var fomatInt = keyRedis.Select(int.Parse).ToHashSet();
+
+                    var checkData = _context.users.Where(x => fomatInt.Contains(x.id) 
+                    && (x.FullName.Contains(name) || x.UserName.Contains(name)) 
+                    && !x.deleted).Select(x => 
+                    new SuggestionDto
                     {
-                        x.id,
-                        x.FullName,
-                        x.UserName,
-                        x.Email,
-                        x.Image,
-                        x.Address,
-                        x.role.Url,
-                        x.Action,
-                        x.cretoredat
+                        Id = x.id,
+                        Avatar = x.Image,
+                        Name = x.UserName
                     }).ToList();
 
                     return await Task.FromResult(PayLoad<object>.Successfully(new
                     {
-                        data
+                        data = checkData
                     }));
                 }
 

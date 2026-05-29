@@ -58,6 +58,7 @@
         public static string ACCOUNTFAILD = "accounts Faild !!!";
         public static string NEW = "New";
         public static string OLD = "Old";
+        public static string DBERROR = "Database Error";
         public static string REPAIRRECORD = "RepairRecord: ";
         public static string FORMATDESCRIPTION = @"@\[(.*?)\]\(id:(\d+)\)";
         public static int AddFriend = 1;

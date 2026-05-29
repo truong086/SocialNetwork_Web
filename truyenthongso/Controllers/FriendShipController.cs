@@ -53,6 +53,13 @@ namespace truyenthongso.Controllers
             return await _service.TestRedis();
         }
 
+        [HttpGet]
+        [Route(nameof(FindOneIdByUserInfo))]
+        public async Task<PayLoad<InfoView>> FindOneIdByUserInfo(int id)
+        {
+            return await _service.FindOneIdByUserInfo(id);
+        }
+
         [HttpPost]
         [Route(nameof(AddFriend))]
         public async Task<PayLoad<FriendShipDTO>> AddFriend(FriendShipDTO data)

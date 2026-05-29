@@ -8,6 +8,7 @@ namespace truyenthongso.Models
         public string? Description { get; set; }
         public bool? Action { get; set; }
         public int? Views { get; set; }
+        public int? Status { get; set; }
         public float? AverageiewTime { get; set; }
         public int? User_id { get; set; }
         public int? Category_id { get; set; }
@@ -22,5 +23,11 @@ namespace truyenthongso.Models
         public ICollection<PostUserTag>? postUserTagss { get; set; }
         public ICollection<Articles_Viewed>? articles_Vieweds { get; set; }
         public ICollection<Tag_Friend>? tag_Friends { get; set; }
+
+        /*
+            Status: 1 => Public
+                    2 => Private
+                    3 => Friend
+         */
     }
 }

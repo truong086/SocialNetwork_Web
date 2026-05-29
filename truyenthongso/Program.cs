@@ -12,6 +12,7 @@ using StackExchange.Redis;
 using System;
 using System.Runtime.InteropServices;
 using System.Text;
+using truyenthongso.ChatHub;
 using truyenthongso.Clouds;
 using truyenthongso.Common;
 using truyenthongso.EmailConfig;
@@ -43,6 +44,24 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJw
         ValidIssuer = builder.Configuration["Jwt:Issuer"],
         ValidAudience = builder.Configuration["Jwt:Issuer"],
         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
+    };
+
+    options.Events = new JwtBearerEvents
+    {
+        OnMessageReceived = context =>
+        {
+            var accessToken = context.Request.Query["access_token"];
+
+            var path = context.HttpContext.Request.Path;
+
+            if (!string.IsNullOrEmpty(accessToken) &&
+                path.StartsWithSegments("/commentHub"))
+            {
+                context.Token = accessToken;
+            }
+
+            return Task.CompletedTask;
+        }
     };
 });
 #endregion
@@ -175,6 +194,7 @@ builder.Services.AddScoped<ITraningModelService, TraningModelService>();
 builder.Services.AddScoped<IIconService, IconService>();
 builder.Services.AddScoped<IRedisService, CacheFuncsService>();
 builder.Services.AddScoped<IFriendShipService, FriendShipService>();
+builder.Services.AddScoped<ICommentService, CommentService>();
 builder.Services.AddScoped<RedisService>();
 builder.Services.Configure<RedisConfig>(
     builder.Configuration.GetSection("Redis"));
@@ -198,6 +218,7 @@ builder.Services.AddScoped<VerificationTaskWorker>();
 builder.Services.AddControllers();
 builder.Services.AddAuthentication(); // nếu có
 builder.Services.AddAuthorization();
+builder.Services.AddSignalR(); // Real-Time
 
 // Đăng ký IHttpContextAccessor
 builder.Services.AddHttpContextAccessor();
@@ -232,4 +253,6 @@ app.UseAuthorization();
 
 app.UseCookiePolicy();
 app.MapControllers();
+
+app.MapHub<CommentHub>("/commentHub");
 app.Run();

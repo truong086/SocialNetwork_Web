@@ -706,6 +706,132 @@
         }
       }
     },
+    "/api/Comment/FindAll": {
+      "get": {
+        "tags": [
+          "Comment"
+        ],
+        "parameters": [
+          {
+            "name": "name",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "post_id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 1
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 10
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectPayLoad"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectPayLoad"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectPayLoad"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Comment/AddComment": {
+      "post": {
+        "tags": [
+          "Comment"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "post_id": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "file": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              },
+              "encoding": {
+                "post_id": {
+                  "style": "form"
+                },
+                "description": {
+                  "style": "form"
+                },
+                "file": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/CommentDToPayLoad"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CommentDToPayLoad"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CommentDToPayLoad"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/Communes/FindAll": {
       "get": {
         "tags": [
@@ -1416,6 +1542,45 @@
               "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ObjectPayLoad"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/FriendShip/FindOneIdByUserInfo": {
+      "get": {
+        "tags": [
+          "FriendShip"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/InfoViewPayLoad"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InfoViewPayLoad"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InfoViewPayLoad"
                 }
               }
             }
@@ -2350,6 +2515,63 @@
         }
       }
     },
+    "/api/Product/FindAllLike": {
+      "get": {
+        "tags": [
+          "Product"
+        ],
+        "parameters": [
+          {
+            "name": "posst_id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 1
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 10
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectPayLoad"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectPayLoad"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjectPayLoad"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/Product/Add": {
       "post": {
         "tags": [
@@ -2368,6 +2590,10 @@
                     "type": "string"
                   },
                   "Categoryid": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "Status": {
                     "type": "integer",
                     "format": "int32"
                   },
@@ -2404,6 +2630,9 @@
                 "Categoryid": {
                   "style": "form"
                 },
+                "Status": {
+                  "style": "form"
+                },
                 "images": {
                   "style": "form"
                 },
@@ -2423,17 +2652,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/ProductDTOPayLoad"
+                  "$ref": "#/components/schemas/PostResponsePayLoad"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ProductDTOPayLoad"
+                  "$ref": "#/components/schemas/PostResponsePayLoad"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ProductDTOPayLoad"
+                  "$ref": "#/components/schemas/PostResponsePayLoad"
                 }
               }
             }
@@ -3753,6 +3982,44 @@
         },
         "additionalProperties": false
       },
+      "CommentDTo": {
+        "type": "object",
+        "properties": {
+          "post_id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "file": {
+            "type": "string",
+            "format": "binary",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CommentDToPayLoad": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean"
+          },
+          "error": {
+            "nullable": true
+          },
+          "errorCode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "content": {
+            "$ref": "#/components/schemas/CommentDTo"
+          }
+        },
+        "additionalProperties": false
+      },
       "FriendShipDTO": {
         "type": "object",
         "properties": {
@@ -3889,6 +4156,67 @@
         },
         "additionalProperties": false
       },
+      "InfoView": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "image": {
+            "type": "string",
+            "nullable": true
+          },
+          "address": {
+            "type": "string",
+            "nullable": true
+          },
+          "total_Mutual_friend": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "total_friend": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "isFriend": {
+            "type": "boolean"
+          },
+          "mutual_friend": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SuggestionDto"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "InfoViewPayLoad": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean"
+          },
+          "error": {
+            "nullable": true
+          },
+          "errorCode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "content": {
+            "$ref": "#/components/schemas/InfoView"
+          }
+        },
+        "additionalProperties": false
+      },
       "LikeDTO": {
         "type": "object",
         "properties": {
@@ -3968,9 +4296,13 @@
         },
         "additionalProperties": false
       },
-      "ProductDTO": {
+      "PostResponse": {
         "type": "object",
         "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
           "title": {
             "type": "string",
             "nullable": true
@@ -3979,34 +4311,101 @@
             "type": "string",
             "nullable": true
           },
-          "categoryid": {
+          "url_icon": {
+            "type": "string",
+            "nullable": true
+          },
+          "image": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "like": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tym": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "share": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "comment": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "user": {
+            "type": "string",
+            "nullable": true
+          },
+          "tag": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/tagPostData"
+            },
+            "nullable": true
+          },
+          "tag_Friend": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/tagPostData"
+            },
+            "nullable": true
+          },
+          "userId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "category_id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "status": {
             "type": "integer",
             "format": "int32",
             "nullable": true
           },
-          "images": {
+          "category_name": {
+            "type": "string",
+            "nullable": true
+          },
+          "userImage": {
+            "type": "string",
+            "nullable": true
+          },
+          "isLike": {
+            "type": "boolean"
+          },
+          "iconCounts": {
             "type": "array",
             "items": {
-              "type": "string",
-              "format": "binary"
+              "$ref": "#/components/schemas/iconCount"
             },
             "nullable": true
           },
-          "tagId": {
+          "comment_Data": {
             "type": "array",
             "items": {
-              "type": "integer",
-              "format": "int32"
+              "$ref": "#/components/schemas/commentData"
             },
             "nullable": true
           },
-          "tag_friendId": {
-            "$ref": "#/components/schemas/Tag_FriendDTO"
+          "deleted": {
+            "type": "boolean"
+          },
+          "date": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
           }
         },
         "additionalProperties": false
       },
-      "ProductDTOPayLoad": {
+      "PostResponsePayLoad": {
         "type": "object",
         "properties": {
           "success": {
@@ -4020,7 +4419,7 @@
             "format": "int32"
           },
           "content": {
-            "$ref": "#/components/schemas/ProductDTO"
+            "$ref": "#/components/schemas/PostResponse"
           }
         },
         "additionalProperties": false
@@ -4093,7 +4492,15 @@
             "type": "string",
             "nullable": true
           },
+          "address": {
+            "type": "string",
+            "nullable": true
+          },
           "mutualCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "totalFriends": {
             "type": "integer",
             "format": "int32"
           },
@@ -4155,20 +4562,6 @@
           },
           "content": {
             "$ref": "#/components/schemas/TagDTO"
-          }
-        },
-        "additionalProperties": false
-      },
-      "Tag_FriendDTO": {
-        "type": "object",
-        "properties": {
-          "userId": {
-            "type": "array",
-            "items": {
-              "type": "integer",
-              "format": "int32"
-            },
-            "nullable": true
           }
         },
         "additionalProperties": false
@@ -4287,6 +4680,68 @@
             "readOnly": true
           },
           "summary": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "commentData": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "id_post": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "image_user": {
+            "type": "string",
+            "nullable": true
+          },
+          "text": {
+            "type": "string",
+            "nullable": true
+          },
+          "user_name": {
+            "type": "string",
+            "nullable": true
+          },
+          "url": {
+            "type": "string",
+            "nullable": true
+          },
+          "total_CommentDescript": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "iconCount": {
+        "type": "object",
+        "properties": {
+          "icon": {
+            "type": "string",
+            "nullable": true
+          },
+          "count": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "tagPostData": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
             "type": "string",
             "nullable": true
           }

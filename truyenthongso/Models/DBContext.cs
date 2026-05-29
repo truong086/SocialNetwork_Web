@@ -37,7 +37,7 @@ namespace truyenthongso.Models
         public DbSet<Articles_Viewed> articles_Viewedss { get; set; }
         public DbSet<Behavioral_Analysis> behavioral_Analysess { get; set; }
         public DbSet<Icon> icons { get; set; }
-        public DbSet<Tag_Friend> tag_Friends { get; set; }
+        public DbSet<Tag_Friend> tag_Friend { get; set; }
         #endregion
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
